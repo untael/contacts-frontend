@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ContactListItem from './Components/ContactListItem/ContactListItem'
 import ContactCreateForm from './Components/ContactCreateForm/ContactCreateForm'
+import ContactDisplay from './Components/ContactDisplay/ContactDisplay'
 import Navbar from './Components/Navbar/Navbar'
 import './App.css'
 
@@ -19,6 +20,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route path="/create" component={ContactCreateForm} />
       <Route path="/item" component={ContactListItem} />
+      <Route path="/display" component={ContactDisplay} />
     </div>
   </Router>
 );

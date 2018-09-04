@@ -13,7 +13,7 @@
 .navbar-button {
     cursor: pointer;
     background-color: #ECECEC;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #ccc;
 }
 .navbar-button:hover {
@@ -22,7 +22,7 @@
 }
 a {
     outline: none;
-    font-size: 18pt;
+    font-size: 14pt;
     font-weight: bold;
     text-transform: uppercase;
 }

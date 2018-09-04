@@ -1,8 +1,8 @@
 import React from 'react'
 import './styles.css'
 import DatePicker from 'react-datepicker'
-import moment from '../../../../node_modules/moment/moment'
-import '../../../../node_modules/react-datepicker/dist/react-datepicker.css'
+import 'react-datepicker/dist/react-datepicker.css'
+import moment from 'moment'
 
 class ContactCreateForm extends React.Component {
   constructor (props) {
