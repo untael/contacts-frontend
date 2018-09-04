@@ -1,0 +1,29 @@
+.navbar-body {
+    display: flex;
+    width: 100%;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    margin: 5px auto;
+    box-shadow: 2px 2px 2px 2px #ECECEC;
+}
+
+.navbar-button {
+    cursor: pointer;
+    background-color: #ECECEC;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+.navbar-button:hover {
+    background-color: #ccc;
+    transition: 0.3s;
+}
+a {
+    outline: none;
+    font-size: 18pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
