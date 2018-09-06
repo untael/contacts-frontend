@@ -4,60 +4,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="popup.css">
   <script src="popup.js"></script>
+  <script src="toast.js"></script>
+  <script src="modal.js"></script>
+  <script src="index.js"></script>
 </head>
 <body class="body">
 <div class="popup">
   <div class="left">
-    <button class="button" onclick="showToast('.toast-error')">Click to show error popup</button>
-    <button class="button" onclick="showToast('.toast-warning')">Click to show warning popup</button>
-    <button class="button" onclick="showToast('.toast-info')">Click to show warning popup</button>
-    <button class="button" onclick="showToast('.toast-success')">Click to show warning popup</button>
-    <button class="button" onclick="showModal('.modal')">Click to show modal popup</button>
+    <button class="button" onclick="UI.Toast.create(Toast.type.ERROR, 'ERROR')">Click to show error popup</button>
+    <button class="button" onclick="UI.Toast.create(Toast.type.WARNING, 'WARNING')">Click to show warning popup</button>
+    <button class="button" onclick="UI.Toast.create(Toast.type.INFO, 'INFO')">Click to show info popup</button>
+    <button class="button" onclick="UI.Toast.create(Toast.type.SUCCESS, 'SUCCESS')">Click to show success popup</button>
+    <button class="button" onclick="UI.Modal.create(Modal.type.MODAL, 'MODAL MESSAGE')">Click to show modal popup</button>
   </div>
   <div class="right">
-    <div class="toast-error">
-      <div class="toast-content">
-        <img src="icons/error.png">
-        <div class="toast-text">
-          Error popup
-          <span class="close" onclick="hideToast('.toast-error')">&times;</span>
-        </div>
-      </div>
-    </div>
-    <div class="toast-warning">
-      <div class="toast-content">
-        <img src="icons/warning.png">
-        <div class="toast-text">
-          Warning popup
-        </div>
-        <span class="close" onclick="hideToast('.toast-warning')">&times;</span>
-      </div>
-    </div>
-    <div class="toast-info">
-      <div class="toast-content">
-        <img src="icons/info.png">
-        <div class="toast-text">
-          Info popup
-        </div>
-        <span class="close" onclick="hideToast('.toast-info')">&times;</span>
-      </div>
-    </div>
-    <div class="toast-success">
-      <div class="toast-content">
-        <img src="icons/success.png">
-        <div class="toast-text">
-          Success popup
-        </div>
-        <span class="close" onclick="hideToast('.toast-success')">&times;</span>
-      </div>
-    </div>
-    <div class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="hideModal('.modal')">&times;</span>
-        <p>Some text in the Modal..</p>
-      </div>
-    </div>
   </div>
+</div>
 </div>
 </body>
 </html>

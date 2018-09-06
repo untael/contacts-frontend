@@ -1,105 +1,29 @@
-const PopupTypes = {
-  error: 'toast-error',
-  warning: 'toast-warning',
-  info: 'toast-info',
-  success: 'toast-success',
-  modal: 'modal',
-}
 //POPUP PARENT
 // create parent class
-function Popup (div) {
-  this.div = document.querySelector(div)
+function Popup () {
 }
 
+Popup.type = {
+  TOAST: 'toast',
+  MODAL: 'modal',
+}
 // methods in prototype
-Popup.prototype.show = function () {
-  // console.log(this.div)
-  this.div.classList.toggle('show')
-}
-Popup.prototype.hide = function () {
-  // console.log(this.div)
-  this.div.classList.remove('show')
-}
-
-//TOAST
-//create child class
-function Toast (div) {
-  Popup.apply(this, arguments)
+Popup.prototype.getId = function () {
+  let text = ''
+  let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  for (let i = 0; i < 3; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length))
+  return text
 }
 
-//inheritance
-Toast.prototype = Object.create(Popup.prototype)
-Toast.prototype.constructor = Toast
-
-Toast.prototype.show = function () {
-  Popup.prototype.show.apply(this)
-  if (this.div === PopupTypes.error) {
-    this.div.classList.toggle(PopupTypes.error)
-  } else {
-    if (this.div === PopupTypes.warning) {
-      this.div.classList.toggle(PopupTypes.warning)
-    } else {
-      if (this.div === PopupTypes.info) {
-        this.div.classList.toggle(PopupTypes.info)
-      } else {
-        if (this.div === PopupTypes.success) {
-          this.div.classList.toggle(PopupTypes.success)
-        }
-      }
-    }
-  }
+Popup.prototype.getTemplate = function (id, type, style, message) {
+  return '<div id="' + id + '" class="' + type + ' ' + style + '">' + '<div class="' + type + '-content">' + '<img class="img" src="icons/' + style + '.png">'
+    + '<div class="text">'+ message + '</div>' + '<span class="close" onClick="UI.Popup.remove(\'' + id + '\')">x</span>' + '</div>' + '</div>'
 }
 
-function showToast (div) {
-  const toast = new Toast(div)
-  toast.show()
-  setTimeout(function () {
-    toast.hide()
-  }, 5000)
-}
-
-function hideToast (div) {
-  const toast = new Toast(div)
-  toast.hide()
-}
-
-//MODAL
-//create child class
-function Modal (div) {
-  Popup.apply(this, arguments)
-}
-
-//inheritance
-Modal.prototype = Object.create(Popup.prototype)
-Modal.prototype.constructor = Modal
-
-Modal.prototype.show = function () {
-  Popup.prototype.show.apply(this)
-  if (this.div === PopupTypes.modal) {
-    this.div.classList.toggle(PopupTypes.modal)
-  }
-}
-
-Modal.prototype.hide = function () {
-
-  this.div.classList.remove('show')
-}
-
-function showModal (div) {
-  const modal = new Modal(div)
-  modal.show()
-}
-
-function hideModal (div) {
-  const modal = new Modal(div)
-  modal.hide()
-}
-
-window.onclick = function (event) {
-  const modal = document.querySelector('.modal')
-  if (event.target === modal) {
-    modal.classList.remove('show')
-  }
+Popup.prototype.remove = function (id) {
+  let element = document.getElementById(id)
+  element.parentNode.removeChild(element)
 }
 
 

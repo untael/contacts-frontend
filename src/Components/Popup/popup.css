@@ -3,7 +3,6 @@
 }
 
 .popup {
-    cursor: pointer;
     display: flex;
 }
 
@@ -14,7 +13,17 @@
 }
 
 .right {
+}
 
+.toast {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    width: 20%;
+    min-width: 200px;
+    height: 50px;
+    color: #fff;
+    border-radius: 6px;
 }
 
 .toast-content {
@@ -24,60 +33,23 @@
     width: 100%;
 }
 
-.toast-error {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    visibility: hidden;
-    width: 20%;
-    min-width: 200px;
-    height: 50px;
-    background-color: darkred;
-    color: #fff;
-    border-radius: 6px;
+.error {
+    background-color: red;
 }
 
-.toast-warning {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    visibility: hidden;
-    width: 20%;
-    min-width: 200px;
-    height: 50px;
+.warning {
     background-color: orangered;
-    color: #fff;
-    border-radius: 6px;
 }
 
-.toast-info {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    visibility: hidden;
-    width: 20%;
-    min-width: 200px;
-    height: 50px;
+.info {
     background-color: dodgerblue;
-    color: #fff;
-    border-radius: 6px;
 }
 
-.toast-success {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    visibility: hidden;
-    width: 20%;
-    min-width: 200px;
-    height: 50px;
+.success {
     background-color: limegreen;
-    color: #fff;
-    border-radius: 6px;
 }
 
 .modal {
-    visibility: hidden;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -90,10 +62,10 @@
 }
 
 .modal-content {
+    display: flex;
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
     width: 80%;
 }
 
@@ -111,14 +83,14 @@
     cursor: pointer;
 }
 
-img {
+.img {
     border: 2px solid white;
     background-color: white;
     border-radius: 20px;
 }
 
-.toast-text {
-    margin-left: 10px;
+.text {
+    margin-left: 5px;
     flex-grow: 1;
 }
 
@@ -141,8 +113,9 @@ img {
     }
 }
 
-.button{
+.button {
     width: 300px;
     height: 40px;
     margin-top: 5px;
+    cursor: pointer;
 }
