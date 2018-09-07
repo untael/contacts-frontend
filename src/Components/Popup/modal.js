@@ -1,6 +1,8 @@
+import Popup from './popup'
+
 //MODAL
 //create child class
-function Modal () {
+export default function Modal () {
   Popup.apply(this, arguments)
 }
 
@@ -22,7 +24,7 @@ window.onclick = function (event) {
   if (document.querySelector('.modal')) {
     let modalId = document.getElementsByClassName('modal')[0].id
     let modal = document.getElementById(modalId)
-    if (event.target == modal) {
+    if (event.target === modal) {
       modal.parentNode.removeChild(modal)
     }
   }

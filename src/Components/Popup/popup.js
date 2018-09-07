@@ -1,6 +1,8 @@
+import UI from './index'
+
 //POPUP PARENT
 // create parent class
-function Popup () {
+export default function Popup () {
 }
 
 Popup.type = {
@@ -18,7 +20,7 @@ Popup.prototype.getId = function () {
 
 Popup.prototype.getTemplate = function (id, type, style, message) {
   return '<div id="' + id + '" class="' + type + ' ' + style + '">' + '<div class="' + type + '-content">' + '<img class="img" src="icons/' + style + '.png">'
-    + '<div class="text">'+ message + '</div>' + '<span class="close" onClick="UI.Popup.remove(\'' + id + '\')">x</span>' + '</div>' + '</div>'
+    + '<div class="text">' + message + '</div>' + '<span class="close" onClick="UI.Popup.remove(\'' + id + '\')">x</span>' + '</div>' + '</div>'
 }
 
 Popup.prototype.remove = function (id) {

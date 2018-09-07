@@ -1,5 +1,8 @@
+import Popup from './popup'
+import UI from './index'
+
 //create child class
-function Toast () {
+export default function Toast () {
   Popup.apply(this, arguments)
 }
 
