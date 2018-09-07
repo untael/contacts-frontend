@@ -1,0 +1,10 @@
+.contact-list__body{
+}
+
+.contact-list__container{
+    margin-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
