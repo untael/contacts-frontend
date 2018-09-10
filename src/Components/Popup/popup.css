@@ -13,13 +13,16 @@
 }
 
 .right {
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }
 
 .toast {
     margin-top: 5px;
     display: flex;
     align-items: center;
-    width: 20%;
+    width: 30%;
     min-width: 200px;
     height: 50px;
     color: #fff;
@@ -31,6 +34,7 @@
     align-items: center;
     margin: 5px 10px;
     width: 100%;
+    font-size: 10pt;
 }
 
 .error {

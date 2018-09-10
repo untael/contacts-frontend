@@ -2,7 +2,7 @@ import React from 'react'
 import './styles.css'
 import axios from 'axios'
 
-class ContactDisplay extends React.Component {
+class ContactDisplayForm extends React.Component {
   state = {
     contact: {},
   }
@@ -13,6 +13,7 @@ class ContactDisplay extends React.Component {
         console.log(res.data)
         const contact = res.data
         this.setState({ contact })
+        console.log(this.state)
       })
   }
 
@@ -120,4 +121,4 @@ class ContactDisplay extends React.Component {
   }
 }
 
-export default ContactDisplay
+export default ContactDisplayForm

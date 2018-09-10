@@ -3,32 +3,41 @@ import './styles.css'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import moment from 'moment'
+import axios from 'axios'
+import UI from '../Popup/index'
+import Popup from '../Popup/popup'
+import Modal from '../Popup/modal'
+import Toast from '../Popup/toast'
+import popup from '../Popup/popup.css'
 
 class ContactCreateForm extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      contactName: '',
-      contactSurname: '',
-      contactMiddlename: '',
+      contactName: undefined,
+      contactSurname: undefined,
+      contactMiddlename: undefined,
       contactBirthday: moment(),
-      contactGender: '',
-      contactFamily: '',
-      contactCountry: '',
-      contactCity: '',
-      contactZip: '',
-      contactAddress: '',
-      contactEmail: '',
-      contactWebsite: '',
-      contactJob: '',
-      contactAbout: '',
+      contactGender: undefined,
+      contactFamily: undefined,
+      contactCountry: undefined,
+      contactCity: undefined,
+      contactZip: undefined,
+      contactAddress: undefined,
+      contactEmail: undefined,
+      contactWebsite: undefined,
+      contactJob: undefined,
+      contactAbout: undefined,
+      contactImage: undefined,
     }
+
     this.handleDateChange = this.handleDateChange.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleDateChange (date) {
+    // console.log(date)
     this.setState({
       contactBirthday: date,
     })
@@ -38,31 +47,49 @@ class ContactCreateForm extends React.Component {
     const target = event.target
     const value = target.value
     const name = target.name
-    this.setState({
-      [name]: value,
-    })
+    if (value !== '') {
+      this.setState({
+        [name]: value,
+      })
+    } else {
+      this.setState({
+        [name]: undefined,
+      })
+    }
   }
 
+  handleUploadFile () {
+    const fileInput = document.getElementById('file')
+    fileInput.click()
+  }
 
-  handleSubmit (event) {
-    const contact = {
-      name: this.state.contactName,
-      surname: this.state.contactSurname,
-      middlename: this.state.contactMiddlename,
-      birthday: this.state.contactBirthday,
-      gender: this.state.contactGender,
-      family: this.state.contactFamily,
-      country: this.state.contactCountry,
-      city: this.state.contactCity,
-      zip: this.state.contactZip,
-      address: this.state.contactAddress,
-      email: this.state.contactEmail,
-      website: this.state.contactWebsite,
-      job: this.state.contactJob,
-      about: this.state.contactAbout,
+  handleSubmit () {
+    if ((this.state.contactName === undefined || '') || (this.state.contactSurname === undefined || '')) {
+      UI.Toast.create(Toast.type.ERROR, 'Fill required fields')
+    } else {
+      UI.Toast.create(Toast.type.SUCCESS, 'Contact successfully created')
+      const contact = {
+        name: this.state.contactName,
+        surname: this.state.contactSurname,
+        middlename: this.state.contactMiddlename,
+        birthday: this.state.contactBirthday,
+        gender: this.state.contactGender,
+        family: this.state.contactFamily,
+        country: this.state.contactCountry,
+        city: this.state.contactCity,
+        zip: this.state.contactZip,
+        address: this.state.contactAddress,
+        email: this.state.contactEmail,
+        website: this.state.contactWebsite,
+        job: this.state.contactJob,
+        about: this.state.contactAbout,
+        image: this.state.contactImage,
+      }
+      axios.post('http://localhost:3000/create', { contact })
+        .then(res => {
+        })
+      console.log(contact)
     }
-    console.log(contact)
-    event.preventDefault()
   }
 
   render () {
@@ -73,7 +100,7 @@ class ContactCreateForm extends React.Component {
             <div className="contact-create-form__container__title">
               Personal information:
             </div>
-            {/*<div className="contact-create-form__avatar">*/}
+            {/*<div className="contact-create-form__avatar" onClick={this.handleUploadFile}>*/}
             {/*Upload*/}
             {/*</div>*/}
             {/*<input id="file" type="file" className="contact-create-form__input__file"/>*/}
@@ -81,10 +108,10 @@ class ContactCreateForm extends React.Component {
           <div className="contact-create-form__container__input-block">
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="name" className="contact-create-form__label">Full name:</label>
-              <input required name="contactName" id="name" type="text" placeholder="Name" className="contact-create-form__input" value={this.state.contactName} onChange={this.handleInputChange}/>
+              <input required name="contactName" id="name" type="text" placeholder="Name*" className="contact-create-form__input" value={this.state.contactName} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
-              <input required name="contactSurname" type="text" placeholder="Surname" className="contact-create-form__input" value={this.state.contactSurname} onChange={this.handleInputChange}/>
+              <input required name="contactSurname" type="text" placeholder="Surname*" className="contact-create-form__input" value={this.state.contactSurname} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
               <input name="contactMiddlename" type="text" placeholder="Middlename" className="contact-create-form__input" value={this.state.contactMiddlename} onChange={this.handleInputChange}/>
@@ -95,6 +122,7 @@ class ContactCreateForm extends React.Component {
               <label htmlFor="birthday" className="contact-create-form__label">Birthday:</label>
               <DatePicker
                 name="contactBirthday"
+                dateFormat="DD.MM.YYYY"
                 selected={this.state.contactBirthday}
                 onChange={this.handleDateChange}
                 peekNextMonth
@@ -102,6 +130,7 @@ class ContactCreateForm extends React.Component {
                 showYearDropdown
                 dropdownMode="select"
                 className="contact-create-form__input"
+                placeholderText="Tap for open datepicker"
               />
             </div>
             <div className="contact-create-form__container__input-block__item">

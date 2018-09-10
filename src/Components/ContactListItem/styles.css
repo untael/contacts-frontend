@@ -1,7 +1,9 @@
 .contact-list-item__body {
-    min-width: 500px;
+    width: 30%;
+    min-width: 400px;
     display: inline-block;
 }
+
 .contact-list-item__container {
     align-items: center;
     background-color: white;
@@ -9,18 +11,27 @@
     padding: 6px;
     border: 2px solid #ccc;
     border-radius: 2px;
-    margin: 20px 20px;
+    margin: 10px 10px;
+    box-shadow: 2px 2px 2px 2px #ECECEC;
 }
+
+.contact-list-item__container:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+
 .contact-list-item__information {
     display: flex;
     flex-direction: column;
 }
+
 .contact-list-item__information__name {
     display: flex;
     color: #22313F;
     font-size: 16pt;
     font-weight: bold;
 }
+
 .contact-list-item__information__short-info {
     display: flex;
     color: #22313F;
@@ -28,6 +39,7 @@
     font-weight: bold;
     margin: 2px 0px;
 }
+
 .contact-list-item__avatar {
     cursor: pointer;
     display: flex;

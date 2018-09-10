@@ -13,10 +13,10 @@ class Navbar extends React.Component {
             <a href="/create">create contact</a>
           </div>
           <div className="navbar-button">
-            <a href="/item">search contact</a>
+            <a href="/search">search contact</a>
           </div>
           <div className="navbar-button">
-            <a href="/display">contact display</a>
+            <a href="/list">contacts list</a>
           </div>
         </div>
       </div>
