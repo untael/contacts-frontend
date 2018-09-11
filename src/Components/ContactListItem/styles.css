@@ -1,6 +1,6 @@
 .contact-list-item__body {
-    width: 30%;
-    min-width: 400px;
+    width: 40%;
+    min-width: 500px;
     display: inline-block;
 }
 
@@ -21,8 +21,11 @@
 }
 
 .contact-list-item__information {
+    align-self: stretch;
+    justify-content: center;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 .contact-list-item__information__name {
@@ -55,4 +58,8 @@
     overflow: hidden;
     align-items: center;
     justify-content: center;
+}
+
+.contact-list-item__dropdown {
+    align-self: flex-start;
 }

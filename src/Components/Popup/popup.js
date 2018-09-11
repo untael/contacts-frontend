@@ -1,5 +1,4 @@
 import UI from './index'
-
 //POPUP PARENT
 // create parent class
 export default function Popup () {

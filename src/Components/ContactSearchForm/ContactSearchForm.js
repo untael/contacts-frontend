@@ -65,10 +65,8 @@ class ContactSearchForm extends React.Component {
       <div className="contact-search-form__body">
         <div className="contact-search-form__container">
           <div className="contact-create-form__container">
-            <div className="contact-create-form__avatar-area">
-              <div className="contact-create-form__container__title">
-                Personal information:
-              </div>
+            <div className="contact-create-form__container__title">
+              Search form
             </div>
             <div className="contact-create-form__container__input-block">
               <div className="contact-create-form__container__input-block__item">
@@ -100,7 +98,7 @@ class ContactSearchForm extends React.Component {
               <div className="contact-create-form__container__input-block__item">
                 <label htmlFor="gender" className="contact-create-form__label">Gender:</label>
                 <select name="contactGender" className="contact-create-form__input__select" value={this.state.contactGender} onChange={this.handleInputChange}>
-                  <option disabled value="">Choose the gender</option>
+                  <option disabled value="" selected="selected">Tap to choose</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
@@ -108,14 +106,11 @@ class ContactSearchForm extends React.Component {
               <div className="contact-create-form__container__input-block__item">
                 <label htmlFor="family" className="contact-create-form__label">Family status:</label>
                 <select name="contactFamily" className="contact-create-form__input__select" value={this.state.contactFamily} onChange={this.handleInputChange}>
-                  <option disabled value="">Family status</option>
+                  <option disabled value="" selected="selected">Tap to choose</option>
                   <option value="single">Single</option>
                   <option value="married">Married</option>
                 </select>
               </div>
-            </div>
-            <div className="contact-create-form__container__title">
-              Location information:
             </div>
             <div className="contact-create-form__container__input-block">
               <div className="contact-create-form__container__input-block__item">
@@ -137,8 +132,7 @@ class ContactSearchForm extends React.Component {
               </button>
             </div>
           </div>
-
-          <div className="contact-list__container">
+          <div className="contact-search-form__contact-list">
             {this.state.contacts.map(contact =>
               <ContactListItem
                 key={contact.id}

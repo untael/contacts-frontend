@@ -4,9 +4,10 @@ import ContactListItem from './Components/ContactListItem/ContactListItem'
 import ContactCreateForm from './Components/ContactCreateForm/ContactCreateForm'
 import ContactDisplayForm from './Components/ContactDisplayForm/ContactDisplayForm'
 import Navbar from './Components/Navbar/Navbar'
-import ContactList from './Components/ContactList/ContactList'
+import ContactListExplorer from './Components/ContactListExplorer/ContactListExplorer'
 import './App.css'
 import ContactSearchForm from './Components/ContactSearchForm/ContactSearchForm'
+import Dropdown from './Components/Universal/Dropdown'
 
 const Home = () => (
   <div>
@@ -20,7 +21,7 @@ const App = () => (
       <Navbar/>
       <hr/>
       <Route exact path="/" component={Home}/>
-      <Route exact path="/list" component={ContactList}/>
+      <Route exact path="/list" component={ContactListExplorer}/>
       <Route path="/create" component={ContactCreateForm}/>
       <Route path="/item" component={ContactListItem}/>
       <Route path="/search" component={ContactSearchForm}/>

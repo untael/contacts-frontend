@@ -15,7 +15,6 @@
 }
 
 .contact-display__container__info-block {
-    align-items: flex-end;
     display: flex;
     flex-wrap: wrap;
     margin: 10px 0px;
@@ -24,16 +23,25 @@
 .contact-display__container__info-block__item {
     margin: 5px 5px;
     flex-grow: 1;
+    flex-basis: 0;
+}
+
+.contact-display__container__title-block {
+    background-color: #ccc;
+    display: flex;
 }
 
 .contact-display__container__title {
     width: 100%;
     background-color: #ccc;
-    display: flex;
-    align-items: flex-start;
     color: #22313F;
     font-size: 24pt;
     font-weight: bold;
+}
+
+.contact-display__container__close-button {
+    align-self: flex-start;
+    cursor: pointer;
 }
 
 .contact-display__label {
@@ -43,7 +51,7 @@
     display: flex;
 }
 
-contact-display__container__title{
+contact-display__container__title {
     width: 100%;
     background-color: #ccc;
     display: flex;
