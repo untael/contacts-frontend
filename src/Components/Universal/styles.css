@@ -1,0 +1,21 @@
+ul {
+    z-index: 1;
+    position: absolute;
+    padding: 4px;
+    list-style-type: none;
+    display: inline-block;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px 2px #ECECEC;
+}
+
+li {
+    margin: 2px 2px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+li:hover {
+    background-color: whitesmoke;
+}
