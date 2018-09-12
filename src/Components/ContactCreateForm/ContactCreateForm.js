@@ -5,42 +5,52 @@ import 'react-datepicker/dist/react-datepicker.css'
 import moment from 'moment'
 import axios from 'axios'
 import UI from '../Popup/index'
-import Popup from '../Popup/popup'
-import Modal from '../Popup/modal'
+// import Popup from '../Popup/popup'
+// import Modal from '../Popup/modal'
 import Toast from '../Popup/toast'
-import popup from '../Popup/popup.css'
+
+// import popup from '../Popup/popup.css'
 
 class ContactCreateForm extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      contactName: undefined,
-      contactSurname: undefined,
-      contactMiddlename: undefined,
-      contactBirthday: moment(),
-      contactGender: undefined,
-      contactFamily: undefined,
-      contactCountry: undefined,
-      contactCity: undefined,
-      contactZip: undefined,
-      contactAddress: undefined,
-      contactEmail: undefined,
-      contactWebsite: undefined,
-      contactJob: undefined,
-      contactAbout: undefined,
-      contactImage: undefined,
+      contact: {
+        name: undefined,
+        surname: undefined,
+        middlename: undefined,
+        birthday: moment(),
+        gender: undefined,
+        family: undefined,
+        country: undefined,
+        city: undefined,
+        zip: undefined,
+        address: undefined,
+        email: undefined,
+        website: undefined,
+        job: undefined,
+        about: undefined,
+        image: undefined,
+      },
     }
 
     this.handleDateChange = this.handleDateChange.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.closeCreate = this.closeCreate.bind(this)
   }
 
   handleDateChange (date) {
-    // console.log(date)
+    const presetDate = date._d.toString().slice(4, 15)
     this.setState({
-      contactBirthday: date,
+      contact: {
+        ...this.state.contact, birthday: date,
+      },
     })
+  }
+
+  closeCreate () {
+    this.props.closeCreate()
   }
 
   handleInputChange (event) {
@@ -49,7 +59,9 @@ class ContactCreateForm extends React.Component {
     const name = target.name
     if (value !== '') {
       this.setState({
-        [name]: value,
+        contact: {
+          ...this.state.contact, [name]: value,
+        },
       })
     } else {
       this.setState({
@@ -64,32 +76,35 @@ class ContactCreateForm extends React.Component {
   }
 
   handleSubmit () {
-    if ((this.state.contactName === undefined || '') || (this.state.contactSurname === undefined || '')) {
+    if ((this.state.contact.name === undefined || '') || (this.state.contact.surname === undefined || '')) {
       UI.Toast.create(Toast.type.ERROR, 'Fill required fields')
     } else {
       UI.Toast.create(Toast.type.SUCCESS, 'Contact successfully created')
-      const contact = {
-        name: this.state.contactName,
-        surname: this.state.contactSurname,
-        middlename: this.state.contactMiddlename,
-        birthday: this.state.contactBirthday,
-        gender: this.state.contactGender,
-        family: this.state.contactFamily,
-        country: this.state.contactCountry,
-        city: this.state.contactCity,
-        zip: this.state.contactZip,
-        address: this.state.contactAddress,
-        email: this.state.contactEmail,
-        website: this.state.contactWebsite,
-        job: this.state.contactJob,
-        about: this.state.contactAbout,
-        image: this.state.contactImage,
-      }
+      const contact = this.state.contact
       axios.post('http://localhost:3000/create', { contact })
         .then(res => {
         })
-      console.log(contact)
     }
+    //fast hack
+    this.setState({
+      contact: {
+        name: '',
+        surname: '',
+        middlename: '',
+        birthday: moment(),
+        gender: '',
+        family: '',
+        country: '',
+        city: '',
+        zip: '',
+        address: '',
+        email: '',
+        website: '',
+        job: '',
+        about: '',
+        image: '',
+      },
+    })
   }
 
   render () {
@@ -108,22 +123,22 @@ class ContactCreateForm extends React.Component {
           <div className="contact-create-form__container__input-block">
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="name" className="contact-create-form__label">Full name:</label>
-              <input required name="contactName" id="name" type="text" placeholder="Name*" className="contact-create-form__input" value={this.state.contactName} onChange={this.handleInputChange}/>
+              <input required name="name" id="name" type="text" placeholder="Name*" className="contact-create-form__input" value={this.state.contact.name} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
-              <input required name="contactSurname" type="text" placeholder="Surname*" className="contact-create-form__input" value={this.state.contactSurname} onChange={this.handleInputChange}/>
+              <input required name="surname" type="text" placeholder="Surname*" className="contact-create-form__input" value={this.state.contact.surname} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
-              <input name="contactMiddlename" type="text" placeholder="Middlename" className="contact-create-form__input" value={this.state.contactMiddlename} onChange={this.handleInputChange}/>
+              <input name="middlename" type="text" placeholder="Middlename" className="contact-create-form__input" value={this.state.contact.middlename} onChange={this.handleInputChange}/>
             </div>
           </div>
           <div className="contact-create-form__container__input-block">
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="birthday" className="contact-create-form__label">Birthday:</label>
               <DatePicker
-                name="contactBirthday"
+                name="birthday"
                 dateFormat="DD.MM.YYYY"
-                selected={this.state.contactBirthday}
+                selected={this.state.contact.birthday}
                 onChange={this.handleDateChange}
                 peekNextMonth
                 showMonthDropdown
@@ -135,7 +150,7 @@ class ContactCreateForm extends React.Component {
             </div>
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="gender" className="contact-create-form__label">Gender:</label>
-              <select name="contactGender" className="contact-create-form__input__select" value={this.state.contactGender} onChange={this.handleInputChange}>
+              <select name="gender" className="contact-create-form__input__select" value={this.state.contact.gender} onChange={this.handleInputChange}>
                 <option disabled value="">Choose your gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -143,7 +158,7 @@ class ContactCreateForm extends React.Component {
             </div>
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="family" className="contact-create-form__label">Family status:</label>
-              <select name="contactFamily" className="contact-create-form__input__select" value={this.state.contactFamily} onChange={this.handleInputChange}>
+              <select name="family" className="contact-create-form__input__select" value={this.state.contact.family} onChange={this.handleInputChange}>
                 <option disabled value="">Family status</option>
                 <option value="single">Single</option>
                 <option value="married">Married</option>
@@ -156,19 +171,19 @@ class ContactCreateForm extends React.Component {
           <div className="contact-create-form__container__input-block">
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="country" className="contact-create-form__label">Country:</label>
-              <input name="contactCountry" id="country" type="text" placeholder="Country" className="contact-create-form__input" value={this.state.contactCountry} onChange={this.handleInputChange}/>
+              <input name="country" id="country" type="text" placeholder="Country" className="contact-create-form__input" value={this.state.contact.country} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="city" className="contact-create-form__label">City:</label>
-              <input name="contactCity" id="city" type="text" placeholder="City" className="contact-create-form__input" value={this.state.contactCity} onChange={this.handleInputChange}/>
+              <input name="city" id="city" type="text" placeholder="City" className="contact-create-form__input" value={this.state.contact.city} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="zip" className="contact-create-form__label">ZIP:</label>
-              <input name="contactZip" id="zip" type="number" placeholder="ZIP" className="contact-create-form__input" value={this.state.contactZip} onChange={this.handleInputChange}/>
+              <input name="zip" id="zip" type="number" placeholder="ZIP" className="contact-create-form__input" value={this.state.contact.zip} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item__textarea">
               <label htmlFor="address" className="contact-create-form__label">Address:</label>
-              <textarea name="contactAddress" id="address" placeholder="Place" className="contact-create-form__textarea" value={this.state.contactAddress} onChange={this.handleInputChange}></textarea>
+              <textarea name="adress" id="address" placeholder="Place" className="contact-create-form__textarea" value={this.state.contact.address} onChange={this.handleInputChange}></textarea>
             </div>
           </div>
           <div className="contact-create-form__container__title">
@@ -177,24 +192,27 @@ class ContactCreateForm extends React.Component {
           <div className="contact-create-form__container__input-block">
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="email" className="contact-create-form__label">E-mail:</label>
-              <input name="contactEmail" id="email" type="text" placeholder="E-mail" className="contact-create-form__input" value={this.state.contactEmail} onChange={this.handleInputChange}/>
+              <input name="email" id="email" type="text" placeholder="E-mail" className="contact-create-form__input" value={this.state.contact.email} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="website" className="contact-create-form__label">Website:</label>
-              <input name="contactWebsite" id="website" type="text" placeholder="Website" className="contact-create-form__input" value={this.state.contactWebsite} onChange={this.handleInputChange}/>
+              <input name="website" id="website" type="text" placeholder="Website" className="contact-create-form__input" value={this.state.contact.website} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="job" className="contact-create-form__label">Current job:</label>
-              <input name="contactJob" id="job" type="text" placeholder="Current job" className="contact-create-form__input" value={this.state.contactJob} onChange={this.handleInputChange}/>
+              <input name="job" id="job" type="text" placeholder="Current job" className="contact-create-form__input" value={this.state.contact.job} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item__textarea">
               <label htmlFor="about" className="contact-create-form__label">About me:</label>
-              <textarea name="contactAbout" id="about" placeholder="Tell us about yourself" className="contact-create-form__textarea" value={this.state.contactAbout} onChange={this.handleInputChange}></textarea>
+              <textarea name="about" id="about" placeholder="Tell us about yourself" className="contact-create-form__textarea" value={this.state.contact.about} onChange={this.handleInputChange}></textarea>
             </div>
           </div>
           <div>
             <button className="contact-create-form__button" onClick={this.handleSubmit}>
               Submit
+            </button>
+            <button className="contact-create-form__button" onClick={this.closeCreate}>
+              Cancel
             </button>
           </div>
         </div>

@@ -13,3 +13,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.contact-search-form__no-results {
+    font-size: 24pt;
+    font-weight: bold;
+}

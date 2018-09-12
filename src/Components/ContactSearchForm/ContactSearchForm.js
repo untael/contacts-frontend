@@ -3,12 +3,14 @@ import axios from 'axios'
 import './styles.css'
 import ContactListItem from '../ContactListItem/ContactListItem'
 import DatePicker from 'react-datepicker/es'
-import moment from 'moment'
+
+// import moment from 'moment'
 
 class ContactSearchForm extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      noResults: false,
       contactName: undefined,
       contactSurname: undefined,
       contactMiddlename: undefined,
@@ -20,8 +22,10 @@ class ContactSearchForm extends React.Component {
       contactZip: undefined,
       contacts: [],
     }
+    this.showNoResults = this.showNoResults.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
+    this.closeSearch = this.closeSearch.bind(this)
   }
 
   handleInputChange (event) {
@@ -39,6 +43,16 @@ class ContactSearchForm extends React.Component {
     }
   }
 
+  showNoResults () {
+    this.setState({
+      noResults: true,
+    })
+  }
+
+  closeSearch () {
+    this.props.closeSearch()
+  }
+
   handleSearch () {
     const contact = {
       name: this.state.contactName,
@@ -51,12 +65,15 @@ class ContactSearchForm extends React.Component {
       city: this.state.contactCity,
       zip: this.state.contactZip,
     }
-    console.log(contact)
     axios.post('http://localhost:3000/search', { contact })
       .then(res => {
-        const contacts = res.data
-        console.log(contacts)
-        this.setState({ contacts })
+        console.log(res.data)
+        if (res.data.length === 0) {
+          this.setState({ contacts: [], noResults: true })
+        } else {
+          const contacts = res.data
+          this.setState({ contacts, noResults: false })
+        }
       })
   }
 
@@ -130,9 +147,18 @@ class ContactSearchForm extends React.Component {
               <button className="contact-create-form__button" onClick={this.handleSearch}>
                 Search
               </button>
+              <button className="contact-create-form__button" onClick={this.closeSearch}>
+                Cancel
+              </button>
             </div>
           </div>
           <div className="contact-search-form__contact-list">
+            {this.state.noResults ? (
+              <div className="contact-search-form__no-results">
+                Sorry, no results :(
+              </div>
+            ) : (null)
+            }
             {this.state.contacts.map(contact =>
               <ContactListItem
                 key={contact.id}

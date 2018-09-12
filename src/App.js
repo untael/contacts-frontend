@@ -2,12 +2,11 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import ContactListItem from './Components/ContactListItem/ContactListItem'
 import ContactCreateForm from './Components/ContactCreateForm/ContactCreateForm'
-import ContactDisplayForm from './Components/ContactDisplayForm/ContactDisplayForm'
-import Navbar from './Components/Navbar/Navbar'
-import ContactListExplorer from './Components/ContactListExplorer/ContactListExplorer'
+import ContactExplorer
+  from './Components/ContactExplorer/ContactExplorer'
 import './App.css'
 import ContactSearchForm from './Components/ContactSearchForm/ContactSearchForm'
-import Dropdown from './Components/Universal/Dropdown'
+import Navbar from './Components/Navbar/Navbar'
 
 const Home = () => (
   <div>
@@ -18,10 +17,7 @@ const Home = () => (
 const App = () => (
   <Router>
     <div className="App">
-      <Navbar/>
-      <hr/>
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/list" component={ContactListExplorer}/>
+      <Route exact path="/" component={ContactExplorer}/>
       <Route path="/create" component={ContactCreateForm}/>
       <Route path="/item" component={ContactListItem}/>
       <Route path="/search" component={ContactSearchForm}/>

@@ -1,15 +1,14 @@
 import React from 'react'
 import './styles.css'
-import axios from 'axios'
 
 class ContactDisplayForm extends React.Component {
   constructor () {
     super()
-    this.hideDisplay = this.hideDisplay.bind(this)
+    this.closeDisplay = this.closeDisplay.bind(this)
   }
 
-  hideDisplay () {
-    this.props.hideDisplay()
+  closeDisplay () {
+    this.props.closeDisplay()
   }
 
   render () {
@@ -21,7 +20,7 @@ class ContactDisplayForm extends React.Component {
               Personal information:
             </div>
             <div className="contact-display__container__close-button">
-              <img src={require('../Popup/icons/close.png')} onClick={this.hideDisplay}></img>
+              <img alt="img" src={require('../Popup/icons/close.png')} onClick={this.closeDisplay}></img>
             </div>
           </div>
           <div className="contact-display__container__info-block">

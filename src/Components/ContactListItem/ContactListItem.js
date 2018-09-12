@@ -10,16 +10,19 @@ class ContactListItem extends React.Component {
     this.setItemStateForEdit = this.setItemStateForEdit.bind(this)
   }
 
-  removeItemFromList () {
+  removeItemFromList (contactId) {
+    const itemId = contactId
     console.log('removed')
-    this.props.updateList(this.props.contact.id)
+    console.log(itemId)
+    this.props.updateList(itemId)
   }
 
-  setItemStateForDisplay() {
+  setItemStateForDisplay () {
+    // this.props.contact
     this.props.setItemStateForDisplay(this.props.contact)
   }
 
-  setItemStateForEdit() {
+  setItemStateForEdit () {
     this.props.setItemStateForEdit(this.props.contact)
   }
 
@@ -41,6 +44,7 @@ class ContactListItem extends React.Component {
           <div className="contact-list-item__dropdown">
             <Dropdown
               setItemStateForDisplay={this.setItemStateForDisplay}
+              editContact={this.setItemStateForEdit}
               removeItemFromList={this.removeItemFromList}
               contactId={this.props.contact.id}
             />

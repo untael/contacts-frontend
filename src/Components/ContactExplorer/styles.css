@@ -1,5 +1,5 @@
 .contact-list__body {
-    display: flex;
+    /*display: flex;*/
 }
 
 .contact-list__container {
@@ -9,4 +9,12 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.contact-list__button {
+    margin: 0px 5px;
+    cursor: pointer;
+    background-color: #ECECEC;
+    padding: 10px;
+    border: 1px solid #ccc;
 }
