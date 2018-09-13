@@ -1,20 +1,42 @@
-.contact-list__body {
-    /*display: flex;*/
+.contact-explorer__body {
 }
 
-.contact-list__container {
+.contact-explorer__container {
     width: 100%;
-    margin-top: 5%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
-.contact-list__button {
+.contact-explorer__button {
     margin: 0px 5px;
     cursor: pointer;
     background-color: #ECECEC;
     padding: 10px;
     border: 1px solid #ccc;
+}
+
+.contact-explorer__ul {
+    list-style: none;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-explorer__ul > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px 0px;
+    user-select: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.contact-explorer__ul > li:hover {
+    background-color: whitesmoke;
 }

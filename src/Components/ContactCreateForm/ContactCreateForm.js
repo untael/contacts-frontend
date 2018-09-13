@@ -5,42 +5,17 @@ import 'react-datepicker/dist/react-datepicker.css'
 import moment from 'moment'
 import axios from 'axios'
 import UI from '../Popup/index'
-// import Popup from '../Popup/popup'
-// import Modal from '../Popup/modal'
 import Toast from '../Popup/toast'
-
-// import popup from '../Popup/popup.css'
 
 class ContactCreateForm extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      contact: {
-        name: undefined,
-        surname: undefined,
-        middlename: undefined,
-        birthday: moment(),
-        gender: undefined,
-        family: undefined,
-        country: undefined,
-        city: undefined,
-        zip: undefined,
-        address: undefined,
-        email: undefined,
-        website: undefined,
-        job: undefined,
-        about: undefined,
-        image: undefined,
-      },
+      contact: {},
     }
-
-    this.handleDateChange = this.handleDateChange.bind(this)
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.closeCreate = this.closeCreate.bind(this)
   }
 
-  handleDateChange (date) {
+  handleDateChange = (date) => {
     const presetDate = date._d.toString().slice(4, 15)
     this.setState({
       contact: {
@@ -49,11 +24,11 @@ class ContactCreateForm extends React.Component {
     })
   }
 
-  closeCreate () {
+  closeCreate = () => {
     this.props.closeCreate()
   }
 
-  handleInputChange (event) {
+  handleInputChange = (event) => {
     const target = event.target
     const value = target.value
     const name = target.name
@@ -65,46 +40,48 @@ class ContactCreateForm extends React.Component {
       })
     } else {
       this.setState({
-        [name]: undefined,
+        contact: {
+          ...this.state.contact, [name]: undefined,
+        },
       })
     }
   }
 
-  handleUploadFile () {
+  handleUploadFile = () => {
     const fileInput = document.getElementById('file')
     fileInput.click()
   }
 
-  handleSubmit () {
-    if ((this.state.contact.name === undefined || '') || (this.state.contact.surname === undefined || '')) {
-      UI.Toast.create(Toast.type.ERROR, 'Fill required fields')
-    } else {
+  handleSubmit = () => {
+    if ((this.state.contact.name) && (this.state.contact.surname)) {
       UI.Toast.create(Toast.type.SUCCESS, 'Contact successfully created')
       const contact = this.state.contact
       axios.post('http://localhost:3000/create', { contact })
         .then(res => {
         })
+    } else {
+      UI.Toast.create(Toast.type.ERROR, 'Fill required fields')
     }
-    //fast hack
-    this.setState({
-      contact: {
-        name: '',
-        surname: '',
-        middlename: '',
-        birthday: moment(),
-        gender: '',
-        family: '',
-        country: '',
-        city: '',
-        zip: '',
-        address: '',
-        email: '',
-        website: '',
-        job: '',
-        about: '',
-        image: '',
-      },
-    })
+    // //fast hack
+    // this.setState({
+    //   contact: {
+    //     name: '',
+    //     surname: '',
+    //     middlename: '',
+    //     birthday: moment(),
+    //     gender: '',
+    //     family: '',
+    //     country: '',
+    //     city: '',
+    //     zip: '',
+    //     address: '',
+    //     email: '',
+    //     website: '',
+    //     job: '',
+    //     about: '',
+    //     image: '',
+    //   },
+    // })
   }
 
   render () {

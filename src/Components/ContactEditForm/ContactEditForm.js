@@ -32,32 +32,27 @@ class ContactEditForm extends React.Component {
         image: undefined,
       },
     }
-
-    this.handleDateChange = this.handleDateChange.bind(this)
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.closeEdit = this.closeEdit.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount = () => {
     console.log(this.props.contact)
     this.setState({
       contact: this.props.contact,
     })
   }
 
-  handleDateChange (date) {
+  handleDateChange = (date) => {
     // console.log(date)
     this.setState({
       contactBirthday: date,
     })
   }
 
-  closeEdit () {
+  closeEdit = () => {
     this.props.closeEdit()
   }
 
-  handleInputChange (event) {
+  handleInputChange = (event) => {
     const target = event.target
     const value = target.value
     const name = target.name
@@ -75,12 +70,12 @@ class ContactEditForm extends React.Component {
   }
 
 
-  handleUploadFile () {
+  handleUploadFile = () => {
     const fileInput = document.getElementById('file')
     fileInput.click()
   }
 
-  handleSubmit () {
+  handleSubmit = () => {
     if ((this.state.contact.name === undefined || '') || (this.state.contact.surname === undefined || '')) {
       UI.Toast.create(Toast.type.ERROR, 'Fill required fields')
     } else {

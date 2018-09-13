@@ -5,24 +5,21 @@ import Dropdown from '../Universal/Dropdown'
 class ContactListItem extends React.Component {
   constructor () {
     super()
-    this.removeItemFromList = this.removeItemFromList.bind(this)
-    this.setItemStateForDisplay = this.setItemStateForDisplay.bind(this)
-    this.setItemStateForEdit = this.setItemStateForEdit.bind(this)
   }
 
-  removeItemFromList (contactId) {
+  removeItemFromList = (contactId) => {
     const itemId = contactId
     console.log('removed')
     console.log(itemId)
     this.props.updateList(itemId)
   }
 
-  setItemStateForDisplay () {
+  setItemStateForDisplay = () => {
     // this.props.contact
     this.props.setItemStateForDisplay(this.props.contact)
   }
 
-  setItemStateForEdit () {
+  setItemStateForEdit = () => {
     this.props.setItemStateForEdit(this.props.contact)
   }
 

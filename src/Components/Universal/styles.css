@@ -1,4 +1,4 @@
-ul {
+.dropdown__ul {
     z-index: 1;
     position: absolute;
     padding: 4px;
@@ -10,12 +10,12 @@ ul {
     box-shadow: 2px 2px 2px 2px #ECECEC;
 }
 
-li {
+.dropdown__li {
     margin: 2px 2px;
     cursor: pointer;
     text-decoration: none;
 }
 
-li:hover {
+.dropdown__li:hover {
     background-color: whitesmoke;
 }

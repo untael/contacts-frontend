@@ -6,13 +6,6 @@ import ContactExplorer
   from './Components/ContactExplorer/ContactExplorer'
 import './App.css'
 import ContactSearchForm from './Components/ContactSearchForm/ContactSearchForm'
-import Navbar from './Components/Navbar/Navbar'
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
 
 const App = () => (
   <Router>

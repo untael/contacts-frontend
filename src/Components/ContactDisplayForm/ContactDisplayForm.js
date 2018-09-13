@@ -4,10 +4,9 @@ import './styles.css'
 class ContactDisplayForm extends React.Component {
   constructor () {
     super()
-    this.closeDisplay = this.closeDisplay.bind(this)
   }
 
-  closeDisplay () {
+  closeDisplay = () => {
     this.props.closeDisplay()
   }
 

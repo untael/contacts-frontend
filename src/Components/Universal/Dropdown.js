@@ -8,26 +8,21 @@ class Dropdown extends React.Component {
     this.state = {
       displayMenu: false,
     }
-
-    this.showDropdownMenu = this.showDropdownMenu.bind(this)
-    this.hideDropdownMenu = this.hideDropdownMenu.bind(this)
-    this.editContact = this.editContact.bind(this)
-
   };
 
-  showDropdownMenu () {
+  showDropdownMenu = () => {
     this.setState({ displayMenu: true }, () => {
       document.addEventListener('click', this.hideDropdownMenu)
     })
   }
 
-  hideDropdownMenu () {
+  hideDropdownMenu = () => {
     this.setState({ displayMenu: false }, () => {
       document.removeEventListener('click', this.hideDropdownMenu)
     })
   }
 
-  deleteContact () {
+  deleteContact = () => {
     const contactId = this.props.contactId
     console.log(contactId)
     // console.log(contactId)
@@ -37,7 +32,7 @@ class Dropdown extends React.Component {
     this.props.removeItemFromList(contactId)
   }
 
-  editContact () {
+  editContact = () => {
     this.props.editContact()
   }
 
@@ -48,14 +43,14 @@ class Dropdown extends React.Component {
           <img src={require('../Popup/icons/settings.png')} onClick={() => this.showDropdownMenu()}></img>
           {
             this.state.displayMenu ? (
-              <ul>
-                <li onClick={() => this.editContact()}>
+              <ul className="dropdown__ul">
+                <li className="dropdown__li" onClick={() => this.editContact()}>
                   Edit
                 </li>
-                <li>
+                <li className="dropdown__li">
                   Send email
                 </li>
-                <li onClick={() => this.deleteContact()}>
+                <li className="dropdown__li" onClick={() => this.deleteContact()}>
                   Delete
                 </li>
               </ul>) : (null)

@@ -22,13 +22,9 @@ class ContactSearchForm extends React.Component {
       contactZip: undefined,
       contacts: [],
     }
-    this.showNoResults = this.showNoResults.bind(this)
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSearch = this.handleSearch.bind(this)
-    this.closeSearch = this.closeSearch.bind(this)
   }
 
-  handleInputChange (event) {
+  handleInputChange = (event) => {
     const target = event.target
     const value = target.value
     const name = target.name
@@ -43,17 +39,17 @@ class ContactSearchForm extends React.Component {
     }
   }
 
-  showNoResults () {
+  showNoResults = () => {
     this.setState({
       noResults: true,
     })
   }
 
-  closeSearch () {
+  closeSearch = () => {
     this.props.closeSearch()
   }
 
-  handleSearch () {
+  handleSearch = () => {
     const contact = {
       name: this.state.contactName,
       surname: this.state.contactSurname,
