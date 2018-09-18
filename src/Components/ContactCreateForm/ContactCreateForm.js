@@ -1,8 +1,6 @@
 import React from 'react'
 import './styles.css'
-import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import moment from 'moment'
 import axios from 'axios'
 import UI from '../Popup/index'
 import Toast from '../Popup/toast'
@@ -15,17 +13,20 @@ class ContactCreateForm extends React.Component {
     }
   }
 
-  handleDateChange = (date) => {
-    const presetDate = date._d.toString().slice(4, 15)
-    this.setState({
-      contact: {
-        ...this.state.contact, birthday: date,
-      },
-    })
-  }
-
   closeCreate = () => {
     this.props.closeCreate()
+  }
+
+  componentDidMount = () => {
+    if (this.props.contact) {
+      this.setState({
+        contact: this.props.contact,
+      })
+    }
+  }
+
+  updateList = () => {
+    this.props.updateList()
   }
 
   handleInputChange = (event) => {
@@ -62,26 +63,7 @@ class ContactCreateForm extends React.Component {
     } else {
       UI.Toast.create(Toast.type.ERROR, 'Fill required fields')
     }
-    // //fast hack
-    // this.setState({
-    //   contact: {
-    //     name: '',
-    //     surname: '',
-    //     middlename: '',
-    //     birthday: moment(),
-    //     gender: '',
-    //     family: '',
-    //     country: '',
-    //     city: '',
-    //     zip: '',
-    //     address: '',
-    //     email: '',
-    //     website: '',
-    //     job: '',
-    //     about: '',
-    //     image: '',
-    //   },
-    // })
+    this.updateList
   }
 
   render () {
@@ -112,18 +94,7 @@ class ContactCreateForm extends React.Component {
           <div className="contact-create-form__container__input-block">
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="birthday" className="contact-create-form__label">Birthday:</label>
-              <DatePicker
-                name="birthday"
-                dateFormat="DD.MM.YYYY"
-                selected={this.state.contact.birthday}
-                onChange={this.handleDateChange}
-                peekNextMonth
-                showMonthDropdown
-                showYearDropdown
-                dropdownMode="select"
-                className="contact-create-form__input"
-                placeholderText="Tap for open datepicker"
-              />
+              <input name="birthday" type="date" placeholder="Birthday" className="contact-create-form__input" value={this.state.contact.birthday} onChange={this.handleInputChange}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="gender" className="contact-create-form__label">Gender:</label>

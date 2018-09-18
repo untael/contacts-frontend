@@ -9,12 +9,23 @@
     justify-content: center;
 }
 
+.contact-explorer__container__navbar {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
 .contact-explorer__button {
+    display: flex;
     margin: 0px 5px;
     cursor: pointer;
     background-color: #ECECEC;
     padding: 10px;
     border: 1px solid #ccc;
+    justify-content: center;
+    width: 20%;
 }
 
 .contact-explorer__ul {
@@ -40,3 +51,23 @@
 .contact-explorer__ul > li:hover {
     background-color: whitesmoke;
 }
+
+@media screen and (min-width: 640px) {
+    .contact-explorer__body {
+    }
+
+    .contact-explorer__container {
+        flex-wrap: wrap;
+    }
+
+    .contact-explorer__button {
+        margin: 0px 5px;
+        cursor: pointer;
+        background-color: #ECECEC;
+        padding: 10px;
+        border: 1px solid #ccc;
+        max-width: 10%;
+    }
+}
+
+

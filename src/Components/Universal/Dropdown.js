@@ -24,8 +24,6 @@ class Dropdown extends React.Component {
 
   deleteContact = () => {
     const contactId = this.props.contactId
-    console.log(contactId)
-    // console.log(contactId)
     axios.post('http://localhost:3000/delete', { contactId })
       .then(res => {
       })

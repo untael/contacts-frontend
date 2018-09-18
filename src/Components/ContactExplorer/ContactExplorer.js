@@ -3,7 +3,6 @@ import axios from 'axios'
 import ContactListItem from '../ContactListItem/ContactListItem'
 import './styles.css'
 import ContactDisplayForm from '../ContactDisplayForm/ContactDisplayForm'
-import ContactEditForm from '../ContactEditForm/ContactEditForm'
 import ContactSearchForm from '../ContactSearchForm/ContactSearchForm'
 import ContactCreateForm from '../ContactCreateForm/ContactCreateForm'
 
@@ -18,15 +17,28 @@ class ContactExplorer extends React.Component {
     showDisplay: false,
     showEdit: false,
     showList: true,
+    showLoader: true,
     contact: {},
     contacts: [],
     pageNumber: 1,
+  }
+
+  showDisplay = (itemState) => {
+    // console.log(itemState)
+    this.setState({
+      contact: itemState,
+      showDisplay: true,
+      showList: false,
+      showLoader: false,
+    })
   }
 
   closeDisplay = () => {
     this.setState({
       showDisplay: false,
       showList: true,
+      showLoader: true,
+
     })
   }
 
@@ -37,6 +49,7 @@ class ContactExplorer extends React.Component {
       showDisplay: false,
       showSearch: true,
       showCreate: false,
+      showLoader: false,
     })
   }
 
@@ -47,22 +60,19 @@ class ContactExplorer extends React.Component {
       showDisplay: false,
       showSearch: false,
       showCreate: false,
+      showLoader: true,
     })
   }
 
-  showEdit = () => {
+  showEdit = (contact) => {
     this.setState({
+      contact: contact,
       showList: false,
       showEdit: true,
+      showLoader: false,
     })
   }
 
-  closeEdit = () => {
-    this.setState({
-      showEdit: false,
-      showList: true,
-    })
-  }
 
   showCreate = () => {
     this.setState({
@@ -71,6 +81,7 @@ class ContactExplorer extends React.Component {
       showDisplay: false,
       showSearch: false,
       showCreate: true,
+      showLoader: false,
     })
   }
 
@@ -81,6 +92,7 @@ class ContactExplorer extends React.Component {
       showDisplay: false,
       showSearch: false,
       showCreate: false,
+      showLoader: true,
     })
   }
 
@@ -91,35 +103,17 @@ class ContactExplorer extends React.Component {
       showDisplay: false,
       showSearch: false,
       showCreate: false,
+      showLoader: true,
     })
   }
 
-  updateList = (deletedContactId) => {
+  updateList = (сontactId) => {
     // console.log(deletedContactId)
     this.setState((state) => ({
         contacts: state.contacts.filter(
-          (contact) => contact.id !== deletedContactId),
+          (contact) => contact.id !== сontactId),
       }),
     )
-    // console.log(this.state)
-  }
-
-  setItemStateForDisplay = (itemState) => {
-    // console.log(itemState)
-    this.setState({
-      contact: itemState,
-      showDisplay: true,
-      showList: false,
-    })
-  }
-
-  setItemStateForEdit = (itemState) => {
-    // console.log(itemState)
-    this.setState({
-      contact: itemState,
-      showEdit: true,
-      showList: false,
-    })
   }
 
   componentDidMount () {
@@ -128,17 +122,14 @@ class ContactExplorer extends React.Component {
 
   getContacts = () => {
     const pageNumber = this.state.pageNumber
-    console.log(pageNumber)
     axios.post('http://localhost:3000/list', { pageNumber })
       .then(res => {
         const contacts = res.data
-        // console.log(contacts)
         this.setState({
           contacts: this.state.contacts.concat(contacts),
           pageNumber: this.state.pageNumber + 1,
         })
       })
-    console.log(this.state.contacts)
   }
 
 
@@ -146,15 +137,15 @@ class ContactExplorer extends React.Component {
     return (
       <div className="contact-explorer__body">
         <hr/>
-        <div className="contact-explorer__container">
+        <div className="contact-explorer__container__navbar">
           <div className="contact-explorer__button" onClick={this.showSearch}>
-            Search contact
+            search
           </div>
           <div className="contact-explorer__button" onClick={this.showCreate}>
-            Create contact
+            create
           </div>
           <div className="contact-explorer__button" onClick={this.closeAll}>
-            Full contact list
+            list
           </div>
         </div>
         <hr/>
@@ -163,8 +154,8 @@ class ContactExplorer extends React.Component {
           <div className="contact-explorer__container">
             {this.state.contacts.map(contact =>
               <ContactListItem
-                setItemStateForEdit={this.setItemStateForEdit}
-                setItemStateForDisplay={this.setItemStateForDisplay}
+                showEdit={this.showEdit}
+                showDisplay={this.showDisplay}
                 updateList={this.updateList}
                 key={contact.id}
                 contact={contact}
@@ -172,26 +163,17 @@ class ContactExplorer extends React.Component {
             )}
           </div>
         ) : (null)}
-
-        <div className="contact-explorer__container">
-          <button className="contact-explorer__button" onClick={this.getContacts}>
-            Load More
-          </button>
-        </div>
+        {this.state.showLoader ? (
+          <div className="contact-explorer__container">
+            <button className="contact-explorer__button" onClick={this.getContacts}>
+              ...
+            </button>
+          </div>) : (null)}
 
         {this.state.showDisplay ? (
           <div className="contact-explorer__container">
             <ContactDisplayForm
               closeDisplay={this.closeDisplay}
-              contact={this.state.contact}
-            />
-          </div>) : (null)
-        }
-        {this.state.showEdit ? (
-          <div className="contact-explorer__container">
-            <ContactEditForm
-              closeEdit={this.closeEdit}
-              showEdit={this.showEdit}
               contact={this.state.contact}
             />
           </div>) : (null)
@@ -209,6 +191,18 @@ class ContactExplorer extends React.Component {
           <div className="contact-explorer__container">
             <ContactCreateForm
               closeCreate={this.closeCreate}
+              updateList={this.updateList}
+            />
+          </div>) : (null)
+        }
+
+        {this.state.showEdit ? (
+          <div className="contact-explorer__container">
+            <ContactCreateForm
+              closeCreate={this.closeCreate}
+              showEdit={this.showEdit}
+              contact={this.state.contact}
+              updateList={this.updateList}
             />
           </div>) : (null)
         }

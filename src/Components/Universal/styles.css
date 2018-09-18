@@ -8,6 +8,7 @@
     border: 2px solid #ccc;
     border-radius: 2px;
     box-shadow: 2px 2px 2px 2px #ECECEC;
+    right: 10%;
 }
 
 .dropdown__li {
@@ -18,4 +19,14 @@
 
 .dropdown__li:hover {
     background-color: whitesmoke;
+}
+
+@media screen and (min-width: 640px){
+    .dropdown__ul {
+        right: unset;
+    }
+
+    .dropdown__li {
+        cursor: pointer;
+    }
 }

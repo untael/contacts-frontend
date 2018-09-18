@@ -1,17 +1,18 @@
 .contact-display__body {
-    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 10px 10px;
 }
 
 .contact-display__container {
-    width: 600px;
     justify-content: center;
     background-color: white;
     display: flex;
     flex-direction: column;
     border: 4px solid #ccc;
     border-radius: 2px;
-    margin: auto;
     box-shadow: 3px 3px 3px 3px #ECECEC;
+    min-width: 100%;
 }
 
 .contact-display__container__info-block {
@@ -22,8 +23,17 @@
 
 .contact-display__container__info-block__item {
     margin: 5px 5px;
-    flex-grow: 1;
-    flex-basis: 0;
+    flex: 1 1 0;
+}
+
+.contact-display-form__info-block__item__text {
+    font-size: 14pt;
+    color: #22313F;
+}
+
+.contact-display-form__container__input-block__item__textarea {
+    width: 100%;
+    margin: 5px 5px;
 }
 
 .contact-display__container__title-block {
@@ -45,7 +55,7 @@
 }
 
 .contact-display__label {
-    color: #22313F;
+    color: dimgrey;
     font-size: 12pt;
     font-weight: bold;
     display: flex;
@@ -71,4 +81,45 @@ contact-display__container__title {
     width: 80px;
     height: 80px;
     float: right;
+}
+
+@media screen and (min-width: 640px) {
+    .contact-display__body {
+        width: 100%;
+    }
+
+    .contact-display__container {
+        width: 50%;
+        min-width: unset;
+    }
+
+    .contact-display-form__info-block__item__text {
+        font-size: 16pt;
+        letter-spacing: 0;
+    }
+
+    .contact-display__container__title {
+        width: 100%;
+        background-color: #ccc;
+        color: #22313F;
+        font-size: 24pt;
+        font-weight: bold;
+    }
+
+    .contact-display__container__close-button {
+        align-self: flex-start;
+        cursor: pointer;
+    }
+
+    .contact-display__label {
+        color: #22313F;
+        font-size: 12pt;
+        font-weight: bold;
+        display: flex;
+    }
+
+    contact-display__container__title {
+        display: flex;
+        align-items: flex-start;
+    }
 }

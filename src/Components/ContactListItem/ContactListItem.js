@@ -9,28 +9,25 @@ class ContactListItem extends React.Component {
 
   removeItemFromList = (contactId) => {
     const itemId = contactId
-    console.log('removed')
-    console.log(itemId)
     this.props.updateList(itemId)
   }
 
-  setItemStateForDisplay = () => {
-    // this.props.contact
-    this.props.setItemStateForDisplay(this.props.contact)
+  showDisplay = () => {
+    this.props.showDisplay(this.props.contact)
   }
 
-  setItemStateForEdit = () => {
-    this.props.setItemStateForEdit(this.props.contact)
+  editContact = () => {
+    this.props.showEdit(this.props.contact)
   }
 
   render () {
     return (
       <div className="contact-list-item__body">
         <div className="contact-list-item__container">
-          <div className="contact-list-item__avatar" onClick={this.setItemStateForDisplay}>
+          <div className="contact-list-item__avatar" onClick={this.showDisplay}>
             Avatar
           </div>
-          <div className="contact-list-item__information" onClick={this.setItemStateForDisplay}>
+          <div className="contact-list-item__information" onClick={this.showDisplay}>
             <div className="contact-list-item__information__name">
               {this.props.contact.name} {this.props.contact.surname} {this.props.contact.middlename}
             </div>
@@ -40,8 +37,8 @@ class ContactListItem extends React.Component {
           </div>
           <div className="contact-list-item__dropdown">
             <Dropdown
-              setItemStateForDisplay={this.setItemStateForDisplay}
-              editContact={this.setItemStateForEdit}
+              setItemStateForDisplay={this.showDisplay}
+              editContact={this.editContact}
               removeItemFromList={this.removeItemFromList}
               contactId={this.props.contact.id}
             />

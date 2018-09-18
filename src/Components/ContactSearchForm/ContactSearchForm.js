@@ -2,9 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import './styles.css'
 import ContactListItem from '../ContactListItem/ContactListItem'
-import DatePicker from 'react-datepicker/es'
-
-// import moment from 'moment'
 
 class ContactSearchForm extends React.Component {
   constructor (props) {
@@ -63,7 +60,6 @@ class ContactSearchForm extends React.Component {
     }
     axios.post('http://localhost:3000/search', { contact })
       .then(res => {
-        console.log(res.data)
         if (res.data.length === 0) {
           this.setState({ contacts: [], noResults: true })
         } else {
@@ -96,17 +92,7 @@ class ContactSearchForm extends React.Component {
             <div className="contact-create-form__container__input-block">
               <div className="contact-create-form__container__input-block__item">
                 <label htmlFor="birthday" className="contact-create-form__label">Birthday:</label>
-                <DatePicker
-                  name="contactBirthday"
-                  dateFormat="DD.MM.YYYY"
-                  selected={this.state.contactBirthday}
-                  onChange={this.handleDateChange}
-                  peekNextMonth
-                  showMonthDropdown
-                  showYearDropdown
-                  dropdownMode="select"
-                  className="contact-create-form__input"
-                />
+                <input name="birthday" type="date" placeholder="Birthday" className="contact-create-form__input" value={this.state.contactBirthday} onChange={this.handleInputChange}/>
               </div>
               <div className="contact-create-form__container__input-block__item">
                 <label htmlFor="gender" className="contact-create-form__label">Gender:</label>

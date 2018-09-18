@@ -1,9 +1,10 @@
 .contact-search-form__body {
-
+    display: flex;
+    justify-content: center;
+    margin: 10px 10px;
 }
 
 .contact-search-form__container {
-
 }
 
 .contact-search-form__contact-list {
@@ -17,4 +18,26 @@
 .contact-search-form__no-results {
     font-size: 24pt;
     font-weight: bold;
+}
+
+@media screen and (min-width: 640px) {
+    .contact-search-form__body {
+    }
+
+    .contact-search-form__container {
+        max-width: 500px;
+    }
+
+    .contact-search-form__contact-list {
+        margin-top: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-search-form__no-results {
+        font-size: 24pt;
+        font-weight: bold;
+    }
 }

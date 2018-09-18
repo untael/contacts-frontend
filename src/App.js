@@ -4,12 +4,12 @@ import ContactListItem from './Components/ContactListItem/ContactListItem'
 import ContactCreateForm from './Components/ContactCreateForm/ContactCreateForm'
 import ContactExplorer
   from './Components/ContactExplorer/ContactExplorer'
-import './App.css'
+import './styles.css'
 import ContactSearchForm from './Components/ContactSearchForm/ContactSearchForm'
 
 const App = () => (
   <Router>
-    <div className="App">
+    <div className="app">
       <Route exact path="/" component={ContactExplorer}/>
       <Route path="/create" component={ContactCreateForm}/>
       <Route path="/item" component={ContactListItem}/>
