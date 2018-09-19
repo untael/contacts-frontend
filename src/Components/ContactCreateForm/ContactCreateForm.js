@@ -4,12 +4,16 @@ import 'react-datepicker/dist/react-datepicker.css'
 import axios from 'axios'
 import UI from '../Popup/index'
 import Toast from '../Popup/toast'
+import '../Popup/popup.css'
+import InputMask from 'react-input-mask'
 
 class ContactCreateForm extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      contact: {},
+      contact: {
+        // phones: [],
+      },
     }
   }
 
@@ -25,14 +29,21 @@ class ContactCreateForm extends React.Component {
     }
   }
 
-  updateList = () => {
-    this.props.updateList()
-  }
-
   handleInputChange = (event) => {
     const target = event.target
     const value = target.value
     const name = target.name
+    // console.log(name)
+    // console.log(value)
+    // if (name === 'number' || name === 'type' || name === 'comment') {
+    //   console.log('you are here')
+    //   this.setState({
+    //     contact: {
+    //       ...this.state.contact.phones, [name]: value,
+    //     },
+    //   })
+    //   console.log('state', this.state.contact)
+    // }
     if (value !== '') {
       this.setState({
         contact: {
@@ -49,11 +60,12 @@ class ContactCreateForm extends React.Component {
   }
 
   handleUploadFile = () => {
-    const fileInput = document.getElementById('file')
+    const fileInput = document.getElementById('image')
     fileInput.click()
   }
 
   handleSubmit = () => {
+    console.log(this.state.contact)
     if ((this.state.contact.name) && (this.state.contact.surname)) {
       UI.Toast.create(Toast.type.SUCCESS, 'Contact successfully created')
       const contact = this.state.contact
@@ -63,7 +75,7 @@ class ContactCreateForm extends React.Component {
     } else {
       UI.Toast.create(Toast.type.ERROR, 'Fill required fields')
     }
-    this.updateList
+    this.props.updateList()
   }
 
   render () {
@@ -74,10 +86,10 @@ class ContactCreateForm extends React.Component {
             <div className="contact-create-form__container__title">
               Personal information:
             </div>
-            {/*<div className="contact-create-form__avatar" onClick={this.handleUploadFile}>*/}
-            {/*Upload*/}
-            {/*</div>*/}
-            {/*<input id="file" type="file" className="contact-create-form__input__file"/>*/}
+            <div className="contact-create-form__avatar" onClick={this.handleUploadFile}>
+            Upload
+            </div>
+            <input name="image" id="image" type="file" className="contact-create-form__input__file" value={this.state.contact.image} onChange={this.handleInputChange}/>
           </div>
           <div className="contact-create-form__container__input-block">
             <div className="contact-create-form__container__input-block__item">
@@ -131,7 +143,7 @@ class ContactCreateForm extends React.Component {
             </div>
             <div className="contact-create-form__container__input-block__item__textarea">
               <label htmlFor="address" className="contact-create-form__label">Address:</label>
-              <textarea name="adress" id="address" placeholder="Place" className="contact-create-form__textarea" value={this.state.contact.address} onChange={this.handleInputChange}></textarea>
+              <textarea name="address" id="address" placeholder="Place" className="contact-create-form__textarea" value={this.state.contact.address} onChange={this.handleInputChange}></textarea>
             </div>
           </div>
           <div className="contact-create-form__container__title">
@@ -153,6 +165,34 @@ class ContactCreateForm extends React.Component {
             <div className="contact-create-form__container__input-block__item__textarea">
               <label htmlFor="about" className="contact-create-form__label">About me:</label>
               <textarea name="about" id="about" placeholder="Tell us about yourself" className="contact-create-form__textarea" value={this.state.contact.about} onChange={this.handleInputChange}></textarea>
+            </div>
+          </div>
+          <div className="contact-create-form__container__title">
+            Contact phones:
+          </div>
+          <div className="contact-create-form__container__input-block">
+            <div className="contact-create-form__container__input-block__item">
+              <label htmlFor="number" className="contact-create-form__label">Phone</label>
+              <InputMask
+                name="number"
+                id="number"
+                onChange={this.handleInputChange}
+                value={this.state.contact.phone}
+                className="contact-create-form__input"
+                mask="+375\(99)999-99-99"
+              />
+            </div>
+            <div className="contact-create-form__container__input-block__item">
+              <label htmlFor="type" className="contact-create-form__label">Type:</label>
+              <select name="type" className="contact-create-form__input__select" value={this.state.contact.phone} onChange={this.handleInputChange}>
+                <option disabled selected value="">Type of phone</option>
+                <option value="male">Home</option>
+                <option value="female">Mobile</option>
+              </select>
+            </div>
+            <div className="contact-create-form__container__input-block__item">
+              <label htmlFor="comment" className="contact-create-form__label">Comment:</label>
+              <input name="comment" id="comment" type="text" placeholder="Comment" className="contact-create-form__input" value={this.state.contact.phone} onChange={this.handleInputChange}/>
             </div>
           </div>
           <div>

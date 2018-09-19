@@ -2,10 +2,6 @@ import React from 'react'
 import './styles.css'
 
 class ContactDisplayForm extends React.Component {
-  constructor () {
-    super()
-  }
-
   closeDisplay = () => {
     this.props.closeDisplay()
   }

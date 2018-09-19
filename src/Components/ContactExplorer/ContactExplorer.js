@@ -7,10 +7,6 @@ import ContactSearchForm from '../ContactSearchForm/ContactSearchForm'
 import ContactCreateForm from '../ContactCreateForm/ContactCreateForm'
 
 class ContactExplorer extends React.Component {
-  constructor (props) {
-    super(props)
-  }
-
   state = {
     requestSent: false,
     showSearch: false,
@@ -108,7 +104,7 @@ class ContactExplorer extends React.Component {
   }
 
   updateList = (сontactId) => {
-    // console.log(deletedContactId)
+    this.getContacts()
     this.setState((state) => ({
         contacts: state.contacts.filter(
           (contact) => contact.id !== сontactId),

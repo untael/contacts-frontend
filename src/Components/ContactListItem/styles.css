@@ -32,15 +32,26 @@
     color: #22313F;
     font-size: 14pt;
     font-weight: bold;
-
 }
 
 .contact-list-item__information__short-info {
     display: flex;
+    margin: 2px 0px;
+    flex-direction: column;
+}
+
+.contact-list-item__information__short-info__item {
+    display: flex;
+    align-items: flex-end;
     color: #22313F;
     font-size: 9pt;
     font-weight: bold;
-    margin: 2px 0px;
+    margin-right: 15px;
+    margin-top: 2px;
+}
+
+label {
+    font-size: 7pt;
 }
 
 .contact-list-item__avatar {
@@ -60,7 +71,8 @@
 .contact-list-item__dropdown {
     align-self: flex-start;
 }
-@media screen and (min-width: 640px){
+
+@media screen and (min-width: 640px) {
     .contact-list-item__body {
         width: 40%;
         min-width: 500px;

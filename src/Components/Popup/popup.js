@@ -24,7 +24,9 @@ Popup.prototype.getTemplate = function (id, type, style, message) {
 
 Popup.prototype.remove = function (id) {
   let element = document.getElementById(id)
-  element.parentNode.removeChild(element)
+  if (element) {
+    element.parentNode.removeChild(element)
+  }
 }
 
 

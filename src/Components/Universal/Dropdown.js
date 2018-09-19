@@ -34,18 +34,22 @@ class Dropdown extends React.Component {
     this.props.editContact()
   }
 
+  sendEmail = () => {
+    this.props.sendEmail()
+  }
+
   render () {
     return (
       <div className="dropdown__body">
         <div className="dropdown__container">
-          <img src={require('../Popup/icons/settings.png')} onClick={() => this.showDropdownMenu()}></img>
+          <img alt="settings" src={require('../Popup/icons/settings.png')} onClick={() => this.showDropdownMenu()}></img>
           {
             this.state.displayMenu ? (
               <ul className="dropdown__ul">
                 <li className="dropdown__li" onClick={() => this.editContact()}>
                   Edit
                 </li>
-                <li className="dropdown__li">
+                <li className="dropdown__li" onClick={() => this.sendEmail()}>
                   Send email
                 </li>
                 <li className="dropdown__li" onClick={() => this.deleteContact()}>
