@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import ContactListItem from './Components/ContactListItem/ContactListItem'
-import ContactCreateForm from './Components/ContactCreateForm/ContactCreateForm'
+import ContactListItem from './components/ContactListItem/ContactListItem'
+import ContactCreateForm from './components/ContactCreateForm/ContactCreateForm'
 import ContactExplorer
-  from './Components/ContactExplorer/ContactExplorer'
+  from './components/ContactExplorer/ContactExplorer'
 import './styles.css'
-import ContactSearchForm from './Components/ContactSearchForm/ContactSearchForm'
+import ContactSearchForm from './components/ContactSearchForm/ContactSearchForm'
 
 const App = () => (
   <Router>
