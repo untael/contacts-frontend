@@ -4,6 +4,7 @@ import Dropdown from '../Universal/Dropdown'
 import UI from '../Popup/index'
 import Toast from '../Popup/toast'
 import '../Popup/popup.css'
+import { connect } from 'react-redux'
 
 class ContactListItem extends React.Component {
   removeItemFromList = (contactId) => {
@@ -19,8 +20,8 @@ class ContactListItem extends React.Component {
     this.props.showEdit(this.props.contact)
   }
   sendEmail = () => {
-    if (this.props.contact.email){
-      window.open('mailto:'+ this.props.contact.email);
+    if (this.props.contact.email) {
+      window.open('mailto:' + this.props.contact.email)
     } else {
       UI.Toast.create(Toast.type.WARNING, 'This user have no email')
     }
@@ -40,7 +41,7 @@ class ContactListItem extends React.Component {
             <div className="contact-list-item__information__short-info">
               <div className="contact-list-item__information__short-info__item">
                 <label>Birthday:</label>
-                  {this.props.contact.birthday}
+                {this.props.contact.birthday}
               </div>
               <div className="contact-list-item__information__short-info__item">
                 <label>Address:</label>
