@@ -23,11 +23,7 @@ class Dropdown extends React.Component {
   }
 
   deleteContact = () => {
-    const contactId = this.props.contactId
-    axios.post('http://localhost:3000/delete', { contactId })
-      .then(res => {
-      })
-    this.props.removeItemFromList(contactId)
+    this.props.deleteContact()
   }
 
   editContact = () => {

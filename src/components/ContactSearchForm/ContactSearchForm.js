@@ -35,15 +35,14 @@ class ContactSearchForm extends React.Component {
       })
     }
   }
+  showList = () => {
+    this.props.showListPanel()
+  }
 
   showNoResults = () => {
     this.setState({
       noResults: true,
     })
-  }
-
-  closeSearch = () => {
-    this.props.closeSearch()
   }
 
   handleSearch = () => {
@@ -129,7 +128,7 @@ class ContactSearchForm extends React.Component {
               <button className="contact-create-form__button" onClick={this.handleSearch}>
                 Search
               </button>
-              <button className="contact-create-form__button" onClick={this.closeSearch}>
+              <button className="contact-create-form__button" onClick={this.showList}>
                 Cancel
               </button>
             </div>

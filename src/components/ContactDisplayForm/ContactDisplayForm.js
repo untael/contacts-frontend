@@ -2,8 +2,9 @@ import React from 'react'
 import './styles.css'
 
 class ContactDisplayForm extends React.Component {
-  closeDisplay = () => {
-    this.props.closeDisplay()
+
+  showList = () => {
+    this.props.showListPanel()
   }
 
   render () {
@@ -15,7 +16,7 @@ class ContactDisplayForm extends React.Component {
               Personal information:
             </div>
             <div className="contact-display__container__close-button">
-              <img alt="img" src={require('../Popup/icons/close.png')} onClick={this.closeDisplay}></img>
+              <img alt="img" src={require('../Popup/icons/close.png')} onClick={this.showList}></img>
             </div>
           </div>
           <div className="contact-display__container__info-block">

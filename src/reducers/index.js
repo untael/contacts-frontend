@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import contactPanels from './contacts'
+import contacts from './contacts'
+import panels from './panels'
 
 export default combineReducers({
-  contactPanels,
+  contacts,
+  panels,
 })
