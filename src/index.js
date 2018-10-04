@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { createStore } from 'redux'
 import './index.css'
 import App from './App'
@@ -10,9 +10,9 @@ import rootReducer from './reducers'
 const rootEl = document.getElementById('root')
 const store = createStore(rootReducer)
 
-ReactDOM.render(
+render(
   <Provider store={store}>
-    <App/>,
+    <App/>
   </Provider>,
   rootEl,
 )

@@ -4,7 +4,6 @@ import Dropdown from '../Universal/Dropdown'
 import UI from '../Popup/index'
 import Toast from '../Popup/toast'
 import '../Popup/popup.css'
-import { connect } from 'react-redux'
 
 class ContactListItem extends React.Component {
   removeItemFromList = (contactId) => {
@@ -12,9 +11,9 @@ class ContactListItem extends React.Component {
     this.props.updateList(itemId)
   }
 
-  showDisplay = () => {
-    this.props.showDisplay(this.props.contact)
-  }
+  // showDisplay = () => {
+  //   this.props.showDisplay(this.props.contact)
+  // }
 
   editContact = () => {
     this.props.showEdit(this.props.contact)

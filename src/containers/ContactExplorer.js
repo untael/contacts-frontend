@@ -1,14 +1,13 @@
 import { connect } from 'react-redux'
-import ContactListItem from '../components/ContactListItem/ContactListItem'
+import ContactExplorer from '../components/ContactExplorer/ContactExplorer'
 
 const mapStateToProps = (state, ownProps) => ({
-  showDisplay: state.contactPanels('SHOW_DISPLAY'),
+  showDefault: state.contactPanels('SHOW_DEFAULT'),
 })
 // const mapDispatchToProps = (dispatch, ownProps) => ({
 //   onClick: () => dispatch(setVisibilityFilter(ownProps.filter)),
 // })
-
 export default connect(
   mapStateToProps,
   // mapDispatchToProps,
-)(ContactListItem)
+)(ContactExplorer)

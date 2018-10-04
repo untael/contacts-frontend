@@ -1,4 +1,4 @@
-let initalState: {
+let initialState = {
   requestSent: false,
   showSearch: false,
   showDisplay: false,
@@ -10,9 +10,12 @@ let initalState: {
   pageNumber: 1,
 }
 
-
-const contactPanels = (state = initalState, action) => {
+const contactPanels = (state = initialState, action) => {
   switch (action.type) {
+    case 'SHOW_DEFAULT':
+      return {
+        state,
+      }
     case 'SHOW_DISPLAY':
       return {
         ...state,
@@ -24,4 +27,16 @@ const contactPanels = (state = initalState, action) => {
       return state
   }
 }
+const contactsList = (state = initialState, action) => {
+  switch (action.type) {
+    case 'CONTACTS_TO_GLOBAL_STORE':
+      return {
+        ...state
+      }
+    default:
+      return state
+  }
+}
+
+console.log(contactPanels)
 export default contactPanels
