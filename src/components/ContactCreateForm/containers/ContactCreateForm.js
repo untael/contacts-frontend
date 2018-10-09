@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
-import { showList, saveContact } from '../actions/actions'
+import { showList, saveContact } from '../../../actions/actions'
 import ContactCreateForm
-  from '../components/ContactCreateForm/ContactCreateForm'
+  from '../ContactCreateForm'
 
 const mapStateToProps = (state) => ({
   contact: state.panels.contact,

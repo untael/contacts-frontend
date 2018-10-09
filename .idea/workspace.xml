@@ -6,19 +6,16 @@
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ContactCreateForm/ContactCreateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactCreateForm/ContactCreateForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContactDisplayForm/ContactDisplayForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactDisplayForm/ContactDisplayForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContactCreateForm/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactCreateForm/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ContactExplorer/ContactExplorer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactExplorer/ContactExplorer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContactListItem/ContactListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactListItem/ContactListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContactSearchForm/ContactSearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactSearchForm/ContactSearchForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Universal/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Universal/Dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ContactExplorer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContactExplorer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ContactListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ContactListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContactCreateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactCreateForm/containers/ContactCreateForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContactDisplayForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactDisplayForm/containers/ContactDisplayForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContactExplorer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactExplorer/containers/ContactExplorer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContactListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactListItem/containers/ContactListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ContactSearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactSearchForm/containers/ContactSearchForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/contacts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/panels.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/panels.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,45 +28,45 @@
     <session id="-1599873805">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="128" />
+          <entry key="css" value="143" />
           <entry key="iml" value="1" />
-          <entry key="js" value="1314" />
+          <entry key="js" value="1725" />
           <entry key="json" value="6" />
-          <entry key="ts" value="1" />
+          <entry key="ts" value="2" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="128" />
+          <entry key="CSS" value="143" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="1314" />
-          <entry key="TypeScript" value="1" />
+          <entry key="JavaScript" value="1725" />
+          <entry key="TypeScript" value="2" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2385" />
-          <entry key="js" value="11371" />
+          <entry key="css" value="2532" />
+          <entry key="js" value="13389" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2385" />
-          <entry key="JavaScript" value="11371" />
+          <entry key="CSS" value="2532" />
+          <entry key="JavaScript" value="13389" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -85,10 +82,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/reducers/contacts.js">
+        <entry file="file://$PROJECT_DIR$/src/actions/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="797">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="-1444">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -106,8 +103,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>contact-create-form__input</find>
-      <find>contact-create-form__input__select</find>
       <find>contact-create-form__input__file</find>
       <find>contact-create-form__label</find>
       <find>contact-create-form__button</find>
@@ -136,6 +131,8 @@
       <find>prop</find>
       <find>cancel</find>
       <find>SAVE_CONTACT_SUCCESS</find>
+      <find>showList</find>
+      <find>this.setState</find>
     </findStrings>
     <replaceStrings>
       <replace>contact-edit</replace>
@@ -147,15 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Components/ContactListExplorer/styles.css" />
-        <option value="$PROJECT_DIR$/src/Components/ContactListExplorer/ContactListExplorer.js" />
-        <option value="$PROJECT_DIR$/src/Components/ContactListExplorer/ContactExplorer.js" />
-        <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/index.css" />
-        <option value="$PROJECT_DIR$/src/Components/ContactEditForm/ContactEditForm.js" />
-        <option value="$PROJECT_DIR$/src/Components/ContactEditForm/styles.css" />
-        <option value="$PROJECT_DIR$/src/Components/ContactSearchForm/styles.css" />
-        <option value="$PROJECT_DIR$/src/Components/ContactCreateForm/styles.css" />
         <option value="$PROJECT_DIR$/src/Components/ContactDisplayForm/styles.css" />
         <option value="$PROJECT_DIR$/src/Components/ContactExplorer/styles.css" />
         <option value="$PROJECT_DIR$/src/Components/Universal/styles.css" />
@@ -185,18 +173,28 @@
         <option value="$PROJECT_DIR$/src/containers/ContactDisplay.js" />
         <option value="$PROJECT_DIR$/src/components/ContactDisplayForm/ContactDisplayForm.js" />
         <option value="$PROJECT_DIR$/src/containers/ContactDisplayForm.js" />
-        <option value="$PROJECT_DIR$/src/reducers/panels.js" />
         <option value="$PROJECT_DIR$/src/containers/ContactExplorer.js" />
-        <option value="$PROJECT_DIR$/src/containers/ContactCreateForm.js" />
         <option value="$PROJECT_DIR$/src/containers/ContactSearchForm.js" />
         <option value="$PROJECT_DIR$/src/components/ContactSearchForm/ContactSearchForm.js" />
         <option value="$PROJECT_DIR$/src/components/Universal/Dropdown.js" />
         <option value="$PROJECT_DIR$/src/containers/ContactListItem.js" />
-        <option value="$PROJECT_DIR$/src/components/ContactExplorer/ContactExplorer.js" />
         <option value="$PROJECT_DIR$/src/components/ContactListItem/ContactListItem.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactCreateForm/ContactCreateFormFirstStep.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactCreateForm/PersStep.js" />
+        <option value="$PROJECT_DIR$/src/containers/ContactCreateForm.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactCreateForm/styles.css" />
+        <option value="$PROJECT_DIR$/src/components/ContactCreateForm/containers/PersonalStep.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactCreateForm/containers/LocationStep.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactCreateForm/containers/AdditionalStep.js" />
         <option value="$PROJECT_DIR$/src/components/ContactCreateForm/ContactCreateForm.js" />
-        <option value="$PROJECT_DIR$/src/actions/actions.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactExplorer/containers/ContactExplorer.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactExplorer/ContactExplorer.js" />
         <option value="$PROJECT_DIR$/src/reducers/contacts.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactCreateForm/AdditionalStep.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactCreateForm/LocationStep.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactCreateForm/PersonalStep.js" />
+        <option value="$PROJECT_DIR$/src/reducers/panels.js" />
+        <option value="$PROJECT_DIR$/src/actions/actions.js" />
       </list>
     </option>
   </component>
@@ -228,6 +226,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -257,88 +277,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ContactCreateForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ContactDisplayForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ContactExplorer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ContactListItem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ContactSearchForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Universal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -349,12 +287,14 @@
     <property name="ts.external.directory.path" value="C:\Users\Pavel.Mironau\AppData\Roaming\JetBrains\WebStorm 2018.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\contacts-react" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\contacts-react\frontend\src\reducers" />
-      <recent name="D:\Projects\contacts-react\frontend\src\actions" />
+      <recent name="D:\Projects\contacts-react\frontend\src\components\ContactSearchForm\containers" />
+      <recent name="D:\Projects\contacts-react\frontend\src\components\ContactListItem\containers" />
+      <recent name="D:\Projects\contacts-react\frontend\src\components\ContactExplorer\containers" />
+      <recent name="D:\Projects\contacts-react\frontend\src\components\ContactDisplayForm\containers" />
+      <recent name="D:\Projects\contacts-react\frontend\src\components\ContactCreateForm\containers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\contacts-react" />
     </key>
   </component>
@@ -400,17 +340,18 @@
       <workItem from="1537956268666" duration="12219000" />
       <workItem from="1538470813516" duration="6000" />
       <workItem from="1538470969851" duration="3277000" />
+      <workItem from="1539074594800" duration="8109000" />
+      <workItem from="1539087102285" duration="7136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124645000" />
+    <option name="totallyTimeSpent" value="139890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.14179105" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.14498934" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.14658849" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5010526" side_tool="true" weight="0.14658849" />
@@ -463,20 +404,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/ContactEditForm/styles.css" />
     <entry file="file://$PROJECT_DIR$/src/Components/ContactEditForm/ContactEditForm.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="76" column="27" lean-forward="true" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ContactSearchForm/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1216">
-          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -539,20 +466,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/index.js" />
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -563,13 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ContactExplorer/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="873">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ContactDisplayForm/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -577,108 +488,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContactDisplayForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContactCreateForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="14" lean-forward="true" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ContactSearchForm/ContactSearchForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/index.js" />
     <entry file="file://$PROJECT_DIR$/src/components/ContactDisplayForm/ContactDisplayForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="108" column="20" lean-forward="true" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
+        <state relative-caret-position="114">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContactExplorer.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        <state relative-caret-position="228">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Universal/Dropdown.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContactSearchForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ContactListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ContactExplorer/ContactExplorer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        <state relative-caret-position="392">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ContactListItem/ContactListItem.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactListItem/containers/ContactListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/containers/LocationStep.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/containers/AdditionalStep.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/containers/PersonalStep.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="8" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactDisplayForm/containers/ContactDisplayForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/containers/ContactCreateForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactSearchForm/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactSearchForm/ContactSearchForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactSearchForm/containers/ContactSearchForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactExplorer/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactExplorer/ContactExplorer.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
-          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <caret line="33" column="27" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactExplorer/containers/ContactExplorer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="22" column="51" lean-forward="true" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="6230" column="4" selection-start-line="6230" selection-start-column="4" selection-end-line="6230" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/AdditionalStep.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/ContactCreateForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2569">
-          <caret line="170" column="53" selection-start-line="170" selection-start-column="53" selection-end-line="170" selection-end-column="53" />
+        <state relative-caret-position="38">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/panels.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/LocationStep.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+        <state relative-caret-position="608">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/actions.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ContactCreateForm/PersonalStep.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="42" column="10" lean-forward="true" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+        <state relative-caret-position="494">
+          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <marker date="1539094086547" expanded="true" signature="816:912" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/contacts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="797">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="494">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/panels.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1444">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

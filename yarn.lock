@@ -5935,7 +5935,7 @@ react-text-mask@^5.4.3:
   dependencies:
     prop-types "^15.5.6"
 
-react@^16.4.2:
+react@^16.5.2:
   version "16.5.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.5.2.tgz#19f6b444ed139baa45609eee6dc3d318b3895d42"
   dependencies:
@@ -6630,6 +6630,10 @@ spdy@^3.4.1:
     safe-buffer "^5.0.1"
     select-hose "^2.0.0"
     spdy-transport "^2.0.18"
+
+spinners@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/spinners/-/spinners-1.2.2.tgz#0af88cb6b3de9a6884ab1e2e9220a612d72c73c3"
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"

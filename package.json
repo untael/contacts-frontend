@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "moment": "^2.22.2",
-    "react": "^16.4.2",
+    "react": "^16.5.2",
     "react-datepicker": "^1.6.0",
     "react-dom": "^16.4.2",
     "react-input-mask": "^2.0.4",
@@ -14,7 +14,8 @@
     "react-scripts": "1.1.5",
     "react-text-mask": "^5.4.3",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "spinners": "^1.2.2"
   },
   "scripts": {
     "start": "react-scripts start",

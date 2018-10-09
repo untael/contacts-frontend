@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 export const SHOW_LIST = 'SHOW_LIST'
 export const SHOW_SEARCH = 'SHOW_SEARCH'
 export const SHOW_DISPLAY = 'SHOW_DISPLAY'
@@ -7,6 +6,8 @@ export const SHOW_EDIT = 'SHOW_EDIT'
 export const GET_CONTACTS_SUCCESS = 'GET_CONTACTS_SUCCESS'
 export const SAVE_CONTACT_SUCCESS = 'SAVE_CONTACT_SUCCESS'
 export const DELETE_CONTACT_SUCCESS = 'DELETE_CONTACT_SUCCESS'
+export const SAVE_CONTACT_DATA = 'SAVE_CONTACT_DATA'
+export const LOAD_CONTACTS_SUCCESS = 'LOAD_CONTACTS_SUCCESS'
 
 export function getContacts () {
   return function (dispatch) {
@@ -20,6 +21,20 @@ export function getContacts () {
       })
   }
 }
+
+export function loadContacts (pageNumber) {
+  return function (dispatch) {
+    return axios.post('http://localhost:3000/list', { pageNumber })
+      .then(res => {
+        const contacts = res.data
+        dispatch({
+          type: LOAD_CONTACTS_SUCCESS,
+          contacts: contacts,
+        })
+      })
+  }
+}
+
 
 export function saveContact (contact) {
   console.log('contact', contact)
@@ -52,6 +67,7 @@ export function showList () {
     showSearch: false,
     showDisplay: false,
     showEdit: false,
+    showLoader: true,
   }
 }
 
@@ -62,6 +78,8 @@ export function showSearch () {
     showSearch: true,
     showDisplay: false,
     showEdit: false,
+    showLoader: false,
+
   }
 }
 
@@ -73,6 +91,7 @@ export function showDisplay (contact) {
     showDisplay: true,
     showEdit: false,
     contact: contact,
+    showLoader: false,
   }
 }
 
@@ -83,6 +102,14 @@ export function showEdit (contact) {
     showSearch: false,
     showDisplay: false,
     showEdit: true,
+    contact: contact,
+    showLoader: false,
+  }
+}
+
+export function saveContactData (contact) {
+  return {
+    type: SAVE_CONTACT_DATA,
     contact: contact,
   }
 }

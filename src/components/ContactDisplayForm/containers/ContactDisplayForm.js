@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import ContactDisplayForm
-  from '../components/ContactDisplayForm/ContactDisplayForm'
-import { showList } from '../actions/actions'
+  from '../ContactDisplayForm'
+import { showList } from '../../../actions/actions'
 
 const mapStateToProps = (state) => ({
   contact: state.panels.contact,
