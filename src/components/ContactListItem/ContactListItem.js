@@ -4,20 +4,16 @@ import Dropdown from '../Universal/Dropdown'
 import UI from '../Popup/index'
 import Toast from '../Popup/toast'
 import '../Popup/popup.css'
-import { connect } from 'react-redux'
 
 class ContactListItem extends React.Component {
-  removeItemFromList = (contactId) => {
-    const itemId = contactId
-    this.props.updateList(itemId)
-  }
-
   showDisplay = () => {
-    this.props.showDisplay(this.props.contact)
+    this.props.showDisplayPanel(this.props.contact)
   }
-
+  deleteContact = () => {
+    this.props.deleteContact(this.props.contact.id)
+  }
   editContact = () => {
-    this.props.showEdit(this.props.contact)
+    this.props.showEditPanel(this.props.contact)
   }
   sendEmail = () => {
     if (this.props.contact.email) {
@@ -57,7 +53,7 @@ class ContactListItem extends React.Component {
             <Dropdown
               sendEmail={this.sendEmail}
               editContact={this.editContact}
-              removeItemFromList={this.removeItemFromList}
+              deleteContact={this.deleteContact}
               contactId={this.props.contact.id}
             />
           </div>

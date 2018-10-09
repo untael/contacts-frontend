@@ -1,9 +1,6 @@
 import React from 'react'
 import './styles.css'
 import 'react-datepicker/dist/react-datepicker.css'
-import axios from 'axios'
-import UI from '../Popup/index'
-import Toast from '../Popup/toast'
 import '../Popup/popup.css'
 import InputMask from 'react-input-mask'
 
@@ -12,38 +9,18 @@ class ContactCreateForm extends React.Component {
     super(props)
     this.state = {
       contact: {
-        // phones: [],
       },
     }
   }
 
-  closeCreate = () => {
-    this.props.closeCreate()
-  }
-
-  componentDidMount = () => {
-    if (this.props.contact) {
-      this.setState({
-        contact: this.props.contact,
-      })
-    }
+  showList = () => {
+    this.props.showListPanel()
   }
 
   handleInputChange = (event) => {
     const target = event.target
     const value = target.value
     const name = target.name
-    // console.log(name)
-    // console.log(value)
-    // if (name === 'number' || name === 'type' || name === 'comment') {
-    //   console.log('you are here')
-    //   this.setState({
-    //     contact: {
-    //       ...this.state.contact.phones, [name]: value,
-    //     },
-    //   })
-    //   console.log('state', this.state.contact)
-    // }
     if (value !== '') {
       this.setState({
         contact: {
@@ -58,24 +35,16 @@ class ContactCreateForm extends React.Component {
       })
     }
   }
-
-  handleUploadFile = () => {
-    const fileInput = document.getElementById('image')
-    fileInput.click()
+  componentDidMount () {
+    if (this.props.contact){
+      this.setState({
+        ...this.state, contact: this.props.contact,
+      })
+    }
   }
 
   handleSubmit = () => {
-    console.log(this.state.contact)
-    if ((this.state.contact.name) && (this.state.contact.surname)) {
-      UI.Toast.create(Toast.type.SUCCESS, 'Contact successfully created')
-      const contact = this.state.contact
-      axios.post('http://localhost:3000/create', { contact })
-        .then(res => {
-        })
-    } else {
-      UI.Toast.create(Toast.type.ERROR, 'Fill required fields')
-    }
-    this.props.updateList()
+    this.props.saveContact(this.state.contact)
   }
 
   render () {
@@ -87,7 +56,7 @@ class ContactCreateForm extends React.Component {
               Personal information:
             </div>
             <div className="contact-create-form__avatar" onClick={this.handleUploadFile}>
-            Upload
+              Upload
             </div>
             <input name="image" id="image" type="file" className="contact-create-form__input__file" value={this.state.contact.image} onChange={this.handleInputChange}/>
           </div>
@@ -167,39 +136,39 @@ class ContactCreateForm extends React.Component {
               <textarea name="about" id="about" placeholder="Tell us about yourself" className="contact-create-form__textarea" value={this.state.contact.about} onChange={this.handleInputChange}></textarea>
             </div>
           </div>
-          <div className="contact-create-form__container__title">
-            Contact phones:
-          </div>
-          <div className="contact-create-form__container__input-block">
-            <div className="contact-create-form__container__input-block__item">
-              <label htmlFor="number" className="contact-create-form__label">Phone</label>
-              <InputMask
-                name="number"
-                id="number"
-                onChange={this.handleInputChange}
-                value={this.state.contact.phone}
-                className="contact-create-form__input"
-                mask="+375\(99)999-99-99"
-              />
-            </div>
-            <div className="contact-create-form__container__input-block__item">
-              <label htmlFor="type" className="contact-create-form__label">Type:</label>
-              <select name="type" className="contact-create-form__input__select" value={this.state.contact.phone} onChange={this.handleInputChange}>
-                <option disabled selected value="">Type of phone</option>
-                <option value="male">Home</option>
-                <option value="female">Mobile</option>
-              </select>
-            </div>
-            <div className="contact-create-form__container__input-block__item">
-              <label htmlFor="comment" className="contact-create-form__label">Comment:</label>
-              <input name="comment" id="comment" type="text" placeholder="Comment" className="contact-create-form__input" value={this.state.contact.phone} onChange={this.handleInputChange}/>
-            </div>
-          </div>
+          {/*<div className="contact-create-form__container__title">*/}
+            {/*Contact phones:*/}
+          {/*</div>*/}
+          {/*<div className="contact-create-form__container__input-block">*/}
+            {/*<div className="contact-create-form__container__input-block__item">*/}
+              {/*<label htmlFor="number" className="contact-create-form__label">Phone</label>*/}
+              {/*<InputMask*/}
+                {/*name="number"*/}
+                {/*id="number"*/}
+                {/*onChange={this.handleInputChange}*/}
+                {/*value={this.state.contact.phone}*/}
+                {/*className="contact-create-form__input"*/}
+                {/*mask="+375\(99)999-99-99"*/}
+              {/*/>*/}
+            {/*</div>*/}
+            {/*<div className="contact-create-form__container__input-block__item">*/}
+              {/*<label htmlFor="type" className="contact-create-form__label">Type:</label>*/}
+              {/*<select name="type" className="contact-create-form__input__select" value={this.state.contact.phone} onChange={this.handleInputChange}>*/}
+                {/*<option disabled selected value="">Type of phone</option>*/}
+                {/*<option value="male">Home</option>*/}
+                {/*<option value="female">Mobile</option>*/}
+              {/*</select>*/}
+            {/*</div>*/}
+            {/*<div className="contact-create-form__container__input-block__item">*/}
+              {/*<label htmlFor="comment" className="contact-create-form__label">Comment:</label>*/}
+              {/*<input name="comment" id="comment" type="text" placeholder="Comment" className="contact-create-form__input" value={this.state.contact.phone} onChange={this.handleInputChange}/>*/}
+            {/*</div>*/}
+          {/*</div>*/}
           <div>
             <button className="contact-create-form__button" onClick={this.handleSubmit}>
               Submit
             </button>
-            <button className="contact-create-form__button" onClick={this.closeCreate}>
+            <button className="contact-create-form__button" onClick={this.showList}>
               Cancel
             </button>
           </div>

@@ -1,27 +1,25 @@
-let initalState: {
-  requestSent: false,
-  showSearch: false,
-  showDisplay: false,
-  showEdit: false,
-  showList: true,
-  showLoader: true,
-  contact: {},
+let initialState = {
   contacts: [],
-  pageNumber: 1,
+  contact: {},
 }
 
-
-const contactPanels = (state = initalState, action) => {
+const contacts = (state = initialState, action) => {
   switch (action.type) {
-    case 'SHOW_DISPLAY':
+    case 'GET_CONTACTS_SUCCESS':
       return {
-        ...state,
-        showDisplay: true,
-        showList: false,
-        showLoader: false,
+        ...state, contacts: action.contacts,
+      }
+
+    case 'SAVE_CONTACT_SUCCESS':
+      return state
+    case 'DELETE_CONTACT_SUCCESS':
+      return {
+        ...state, contacts: state.contacts.filter(
+          (contact) => contact.id !== action.id),
       }
     default:
       return state
   }
 }
-export default contactPanels
+
+export default contacts

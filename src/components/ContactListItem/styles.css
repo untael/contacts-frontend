@@ -15,6 +15,7 @@
 }
 
 .contact-list-item__container:hover {
+    transition: 0.5s ease-in-out;
     cursor: pointer;
     background-color: whitesmoke;
 }

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import ContactListItem from './components/ContactListItem/ContactListItem'
 import ContactCreateForm from './components/ContactCreateForm/ContactCreateForm'
 import ContactExplorer
-  from './components/ContactExplorer/ContactExplorer'
+  from './containers/ContactExplorer'
 import './styles.css'
 import ContactSearchForm from './components/ContactSearchForm/ContactSearchForm'
 
