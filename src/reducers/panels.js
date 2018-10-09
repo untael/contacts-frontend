@@ -16,6 +16,7 @@ const panels = (state = initialState, action) => {
         showSearch: action.showSearch,
         showDisplay: action.showDisplay,
         showEdit: action.showEdit,
+        showLoader: action.showLoader,
       }
     case 'SHOW_SEARCH':
       return {
@@ -24,6 +25,7 @@ const panels = (state = initialState, action) => {
         showSearch: action.showSearch,
         showDisplay: action.showDisplay,
         showEdit: action.showEdit,
+        showLoader: action.showLoader,
       }
     case 'SHOW_SEARCH':
       return {
@@ -32,6 +34,7 @@ const panels = (state = initialState, action) => {
         showSearch: action.showSearch,
         showDisplay: action.showDisplay,
         showEdit: action.showEdit,
+        showLoader: action.showLoader,
       }
     case 'SHOW_DISPLAY':
       return {
@@ -41,6 +44,7 @@ const panels = (state = initialState, action) => {
         showDisplay: action.showDisplay,
         showEdit: action.showEdit,
         contact: action.contact,
+        showLoader: action.showLoader,
       }
     case 'SHOW_EDIT':
       return {
@@ -49,6 +53,12 @@ const panels = (state = initialState, action) => {
         showSearch: action.showSearch,
         showDisplay: action.showDisplay,
         showEdit: action.showEdit,
+        contact: action.contact,
+        showLoader: action.showLoader,
+      }
+    case 'SAVE_CONTACT_DATA':
+      return {
+        ...state,
         contact: action.contact,
       }
     default:
