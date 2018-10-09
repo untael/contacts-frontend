@@ -55,7 +55,6 @@ class LocationStep extends React.Component {
   }
 
   render () {
-    console.log('this.state.contact.image', this.state.contact)
     return (
       <div className="contact-create-form__container">
         <div className="contact-create-form__container__title">
