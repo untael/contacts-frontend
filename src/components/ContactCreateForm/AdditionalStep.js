@@ -13,10 +13,6 @@ class AdditionalStep extends React.Component {
     this.props.saveData(this.state.contact)
   }
 
-  onClick = () => {
-    this.saveData()
-    this.saveContact()
-  }
 
   handleInputChange = (event) => {
     const target = event.target
@@ -41,8 +37,9 @@ class AdditionalStep extends React.Component {
     this.props.showLocationStep()
   }
 
-  saveContact = () => {
-    this.props.saveContact(this.state.contact)
+  showPhonesStep = () => {
+    this.saveData()
+    this.props.showPhonesStep()
   }
 
   componentDidMount () {
@@ -54,7 +51,6 @@ class AdditionalStep extends React.Component {
   }
 
   render () {
-    console.log('this.state.contact.image', this.state.contact)
     return (
       <div className="contact-create-form__container">
         <div>
@@ -81,8 +77,8 @@ class AdditionalStep extends React.Component {
           </div>
         </div>
         <div>
-          <button className="contact-create-form__button" onClick={this.onClick}>
-            Save
+          <button className="contact-create-form__button" onClick={this.showPhonesStep}>
+            Next
           </button>
           <button className="contact-create-form__button" onClick={this.showLocationStep}>
             Back

@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   showDisplayPanel: (contact) => dispatch(showDisplay(contact)),
   showEditPanel: (contact) => dispatch(showEdit(contact)),
-  deleteContact: (contactId) => dispatch(deleteContact(contactId)),
+  deleteContact: (id) => dispatch(deleteContact(id)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactListItem)

@@ -5,7 +5,7 @@ import {
   showList,
   showSearch,
   showEdit,
-  loadContacts,
+  loadContacts, showCreate,
 } from '../../../actions/actions'
 
 const mapStateToProps = (state) => ({
@@ -24,6 +24,7 @@ const mapDispatchToProps = (dispatch) => ({
   showListPanel: () => dispatch(showList()),
   showSearchPanel: () => dispatch(showSearch()),
   showEditPanel: () => dispatch(showEdit()),
+  showCreatePanel: () => dispatch(showCreate()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactExplorer)

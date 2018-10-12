@@ -33,16 +33,12 @@ class LocationStep extends React.Component {
     }
   }
 
-  onClick = () => {
-    this.showAdditionalStep()
-    this.saveData()
-  }
-
   showPersonalStep = () => {
     this.props.showPersonalStep()
   }
 
   showAdditionalStep = () => {
+    this.saveData()
     this.props.showAdditionalStep()
   }
 
@@ -55,7 +51,6 @@ class LocationStep extends React.Component {
   }
 
   render () {
-    console.log('this.state.contact.image', this.state.contact)
     return (
       <div className="contact-create-form__container">
         <div className="contact-create-form__container__title">
@@ -80,7 +75,7 @@ class LocationStep extends React.Component {
           </div>
         </div>
         <div>
-          <button className="contact-create-form__button" onClick={this.onClick}>
+          <button className="contact-create-form__button" onClick={this.showAdditionalStep}>
             Next
           </button>
           <button className="contact-create-form__button" onClick={this.showPersonalStep}>

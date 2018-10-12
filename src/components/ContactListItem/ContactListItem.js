@@ -10,7 +10,7 @@ class ContactListItem extends React.Component {
     this.props.showDisplayPanel(this.props.contact)
   }
   deleteContact = () => {
-    this.props.deleteContact(this.props.contact.id)
+    this.props.deleteContact(this.props.contact._id)
   }
   editContact = () => {
     this.props.showEditPanel(this.props.contact)

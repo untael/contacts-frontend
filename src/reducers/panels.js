@@ -27,16 +27,17 @@ const panels = (state = initialState, action) => {
         showEdit: action.showEdit,
         showLoader: action.showLoader,
       }
-    case 'SHOW_SEARCH':
+    case 'SHOW_DISPLAY':
       return {
         ...state,
         showList: action.showList,
         showSearch: action.showSearch,
         showDisplay: action.showDisplay,
         showEdit: action.showEdit,
+        contact: action.contact,
         showLoader: action.showLoader,
       }
-    case 'SHOW_DISPLAY':
+    case 'SHOW_CREATE':
       return {
         ...state,
         showList: action.showList,

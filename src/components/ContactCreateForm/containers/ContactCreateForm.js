@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 })
 const mapDispatchToProps = (dispatch) => ({
   showListPanel: () => dispatch(showList()),
-  saveContact: (contact) => dispatch(saveContact(contact)),
+  saveContact: (createdContact) => dispatch(saveContact(createdContact)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactCreateForm)

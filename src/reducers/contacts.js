@@ -30,7 +30,7 @@ const contacts = (state = initialState, action) => {
     case 'DELETE_CONTACT_SUCCESS':
       return {
         ...state, contacts: state.contacts.filter(
-          (contact) => contact.id !== action.id),
+          (contact) => contact._id !== action.id),
       }
     default:
       return state
