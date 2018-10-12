@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import ContactListItem from '../components/ContactListItem/ContactListItem'
-import { showDisplay, showEdit, deleteContact } from '../actions/actions'
+import ContactListItem from '../ContactListItem'
+import { showDisplay, showEdit, deleteContact } from '../../../actions/actions'
 
 const mapStateToProps = (state) => ({
   showDisplay: state.panels.showDisplay,

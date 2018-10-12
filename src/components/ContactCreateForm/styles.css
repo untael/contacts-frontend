@@ -23,6 +23,7 @@
     color: #22313F;
     font-size: 24pt;
     font-weight: bold;
+    margin: 26px 0px;
 }
 
 .contact-create-form__container__input-block {
@@ -53,7 +54,7 @@
     width: 100%;
 }
 
-.contact-create-form__container__input-block__item__textarea{
+.contact-create-form__container__input-block__item__textarea {
     width: 100%;
     margin: 5px 5px;
 }
@@ -89,7 +90,6 @@
     display: flex;
 }
 
-
 .contact-create-form__button {
     height: 30px;
     width: 80px;
@@ -112,14 +112,17 @@
     width: 80px;
     height: 80px;
     clear: left;
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 0;
     overflow: hidden;
     align-items: center;
     justify-content: center;
 }
 
-.contact-create-form__avatar-area{
+.contact-create-form__avatar-area {
     display: flex;
+    position: relative;
 }
 
 @media screen and (min-width: 640px) {
@@ -136,7 +139,7 @@
         width: 30%;
     }
 
-    .contact-create-form__container__input-block__item__textarea{
+    .contact-create-form__container__input-block__item__textarea {
         width: 100%;
         margin: 5px 15px;
     }

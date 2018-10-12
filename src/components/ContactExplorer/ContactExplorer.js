@@ -1,9 +1,12 @@
 import React from 'react'
 import './styles.css'
-import ContactListItem from '../../containers/ContactListItem'
-import ContactDisplayForm from '../../containers/ContactDisplayForm'
-import ContactSearchForm from '../../containers/ContactSearchForm'
-import ContactCreateForm from '../../containers/ContactCreateForm'
+import ContactListItem from '../ContactListItem/containers/ContactListItem'
+import ContactDisplayForm
+  from '../ContactDisplayForm/containers/ContactDisplayForm'
+import ContactSearchForm
+  from '../ContactSearchForm/containers/ContactSearchForm'
+import ContactCreateForm
+  from '../ContactCreateForm/containers/ContactCreateForm'
 
 class ContactExplorer extends React.Component {
   showSearch = () => {
@@ -11,6 +14,7 @@ class ContactExplorer extends React.Component {
   }
 
   showList = () => {
+    this.updateList()
     this.props.showListPanel()
   }
 
@@ -24,6 +28,10 @@ class ContactExplorer extends React.Component {
 
   updateList = () => {
     this.props.getContacts()
+  }
+  loadContacts = () => {
+    console.log('this.props.pageNumber', this.props.pageNumber)
+    this.props.getMoreContacts(this.props.pageNumber)
   }
 
   componentDidMount () {
@@ -62,16 +70,17 @@ class ContactExplorer extends React.Component {
           </div>
         ) : (null)}
 
-        {/*{this.props.showLoader ? (*/}
-          {/*<div className="contact-explorer__container">*/}
-            {/*<button className="contact-explorer__button" onClick={this.getContacts}>*/}
-              {/*...*/}
-            {/*</button>*/}
-          {/*</div>) : (null)}*/}
+        {this.props.showLoader ? (
+          <div className="contact-explorer__container">
+            <button className="contact-explorer__button" onClick={this.loadContacts}>
+              ...
+            </button>
+          </div>) : (null)}
 
         {this.props.showDisplay ? (
           <div className="contact-explorer__container">
-            <ContactDisplayForm/>
+            <ContactDisplayForm
+            />
           </div>) : (null)
         }
 
@@ -85,7 +94,8 @@ class ContactExplorer extends React.Component {
 
         {this.props.showEdit ? (
           <div className="contact-explorer__container">
-            <ContactCreateForm/>
+            <ContactCreateForm
+            />
           </div>) : (null)
         }
       </div>
