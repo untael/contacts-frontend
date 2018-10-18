@@ -90,6 +90,19 @@
     display: flex;
 }
 
+.contact-create-form__delete-row-button {
+    color: #22313F;
+    font-size: 12pt;
+    font-weight: bold;
+    display: flex;
+    transition: ease-in-out 0.2s;
+}
+
+.contact-create-form__delete-row-button:hover {
+    color: red;
+    cursor: pointer;
+}
+
 .contact-create-form__button {
     height: 30px;
     width: 80px;

@@ -19,7 +19,7 @@ class ContactExplorer extends React.Component {
   }
 
   showCreate = () => {
-    this.props.showEditPanel()
+    this.props.showCreatePanel()
   }
 
   showDisplay = () => {
@@ -63,7 +63,7 @@ class ContactExplorer extends React.Component {
                 showEdit={this.showEdit}
                 showDisplay={this.showDisplay}
                 updateList={this.updateList}
-                key={contact.id}
+                key={contact._id}
                 contact={contact}
               />,
             )}

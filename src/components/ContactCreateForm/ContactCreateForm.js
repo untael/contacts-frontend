@@ -2,22 +2,51 @@ import React from 'react'
 import './styles.css'
 import 'react-datepicker/dist/react-datepicker.css'
 import '../Popup/popup.css'
-import PersonalStep from './containers/PersonalStep'
-import LocationStep from './containers/LocationStep'
-import AdditionalStep from './containers/AdditionalStep'
+import PersonalStep from './PersonalStep'
+import LocationStep from './LocationStep'
+import AdditionalStep from './AdditionalStep'
+import PhonesStep from './PhonesStep'
 
 class ContactCreateForm extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      contact: {},
+      contact: {
+        phones: [],
+      },
       step: 'personal',
+    }
+  }
+
+  handlePhoneChange = (phones) => {
+    this.setState({
+      contact: {
+        ...this.state.contact, phones: phones,
+      },
+    })
+  }
+  handleInputChange = (event) => {
+    const value = event.target.value
+    const name = event.target.name
+    if (value !== '') {
+      this.setState({
+        contact: {
+          ...this.state.contact, [name]: value,
+        },
+      })
+    } else {
+      this.setState({
+        contact: {
+          ...this.state.contact, [name]: undefined,
+        },
+      })
     }
   }
 
   showList = () => {
     this.props.showListPanel()
   }
+
   showPersonalStep = () => {
     this.setState({
       ...this.state, step: 'personal',
@@ -36,23 +65,21 @@ class ContactCreateForm extends React.Component {
     })
   }
 
-  handleInputChange = (event) => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
-    if (value !== '') {
-      this.setState({
-        contact: {
-          ...this.state.contact, [name]: value,
-        },
-      })
-    } else {
-      this.setState({
-        contact: {
-          ...this.state.contact, [name]: undefined,
-        },
-      })
-    }
+  showPhonesStep = () => {
+    this.setState({
+      ...this.state, step: 'phones',
+    })
+  }
+
+  handleSubmit = async (phones) => {
+    await this.setState({
+      ...this.state,
+      contact: {
+        ...this.state.contact,
+        phones: phones,
+      },
+    })
+    this.props.saveContact(this.state.contact)
   }
 
   componentDidMount () {
@@ -63,21 +90,20 @@ class ContactCreateForm extends React.Component {
     }
   }
 
-  handleSubmit = () => {
-    this.props.saveContact(this.props.contact)
-  }
-
   render () {
+    console.log('CONTACT IN FORM', this.state.contact)
     return (
       <div className="contact-create-form__body">
         {(this.state.step === 'personal') ? (
           <PersonalStep
+            handleInputChange={this.handleInputChange}
             showLocationStep={this.showLocationStep}
             contact={this.state.contact}
           />) : (null)
         }
         {(this.state.step === 'location') ? (
           <LocationStep
+            handleInputChange={this.handleInputChange}
             showAdditionalStep={this.showAdditionalStep}
             showPersonalStep={this.showPersonalStep}
             contact={this.state.contact}
@@ -85,39 +111,20 @@ class ContactCreateForm extends React.Component {
         }
         {(this.state.step === 'additional') ? (
           <AdditionalStep
-            saveContact={this.handleSubmit}
+            handleInputChange={this.handleInputChange}
             showLocationStep={this.showLocationStep}
+            showPhonesStep={this.showPhonesStep}
             contact={this.state.contact}
           />) : (null)
         }
-        {/*<div className="contact-create-form__container__title">*/}
-        {/*Contact phones:*/}
-        {/*</div>*/}
-        {/*<div className="contact-create-form__container__input-block">*/}
-        {/*<div className="contact-create-form__container__input-block__item">*/}
-        {/*<label htmlFor="number" className="contact-create-form__label">Phone</label>*/}
-        {/*<InputMask*/}
-        {/*name="number"*/}
-        {/*id="number"*/}
-        {/*onChange={this.handleInputChange}*/}
-        {/*value={this.state.contact.phone}*/}
-        {/*className="contact-create-form__input"*/}
-        {/*mask="+375\(99)999-99-99"*/}
-        {/*/>*/}
-        {/*</div>*/}
-        {/*<div className="contact-create-form__container__input-block__item">*/}
-        {/*<label htmlFor="type" className="contact-create-form__label">Type:</label>*/}
-        {/*<select name="type" className="contact-create-form__input__select" value={this.state.contact.phone} onChange={this.handleInputChange}>*/}
-        {/*<option disabled selected value="">Type of phone</option>*/}
-        {/*<option value="male">Home</option>*/}
-        {/*<option value="female">Mobile</option>*/}
-        {/*</select>*/}
-        {/*</div>*/}
-        {/*<div className="contact-create-form__container__input-block__item">*/}
-        {/*<label htmlFor="comment" className="contact-create-form__label">Comment:</label>*/}
-        {/*<input name="comment" id="comment" type="text" placeholder="Comment" className="contact-create-form__input" value={this.state.contact.phone} onChange={this.handleInputChange}/>*/}
-        {/*</div>*/}
-        {/*</div>*/}
+        {(this.state.step === 'phones') ? (
+          <PhonesStep
+            handlePhoneChange={this.handlePhoneChange}
+            saveContact={this.handleSubmit}
+            showAdditionalStep={this.showAdditionalStep}
+            phones={this.state.contact.phones}
+          />) : (null)
+        }
       </div>
     )
   }

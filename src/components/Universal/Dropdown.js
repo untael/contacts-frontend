@@ -1,6 +1,5 @@
 import React from 'react'
 import './styles.css'
-import axios from 'axios'
 
 class Dropdown extends React.Component {
   constructor () {

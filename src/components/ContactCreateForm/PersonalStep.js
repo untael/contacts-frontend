@@ -4,39 +4,14 @@ import './styles.css'
 class PersonalStep extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      contact: {
-        image: '',
-      },
-    }
+  }
+
+  handleInput = (event) => {
+    this.props.handleInputChange(event)
   }
 
   showLocationStep = () => {
     this.props.showLocationStep()
-  }
-
-  saveData = () => {
-    this.props.saveData(this.state.contact)
-  }
-
-  handleInputChange = (event) => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
-    if (value !== '') {
-      this.setState({
-        contact: {
-          ...this.state.contact, [name]: value,
-        },
-      })
-    } else {
-      this.setState({
-        contact: {
-          ...this.state.contact, [name]: undefined,
-        },
-      })
-    }
-    console.log('this.state.contact', this.state.contact)
   }
 
   handleUploadFile = () => {
@@ -60,14 +35,7 @@ class PersonalStep extends React.Component {
     })
   }
 
-
-  onClick = () => {
-    this.showLocationStep()
-    this.saveData()
-  }
-
   render () {
-    console.log('this.state.contact.image', this.state.contact)
     return (
       <div>
         <div className="contact-create-form__container">
@@ -83,39 +51,39 @@ class PersonalStep extends React.Component {
           <div className="contact-create-form__container__input-block">
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="name" className="contact-create-form__label">Full name:</label>
-              <input required name="name" id="name" type="text" placeholder="Name*" className="contact-create-form__input" value={this.state.contact.name} onChange={this.handleInputChange}/>
+              <input required name="name" id="name" type="text" placeholder="Name*" className="contact-create-form__input" value={this.props.contact.name} onChange={this.handleInput}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
-              <input required name="surname" type="text" placeholder="Surname*" className="contact-create-form__input" value={this.state.contact.surname} onChange={this.handleInputChange}/>
+              <input required name="surname" type="text" placeholder="Surname*" className="contact-create-form__input" value={this.props.contact.surname} onChange={this.handleInput}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
-              <input name="middlename" type="text" placeholder="Middlename" className="contact-create-form__input" value={this.state.contact.middlename} onChange={this.handleInputChange}/>
+              <input name="middlename" type="text" placeholder="Middlename" className="contact-create-form__input" value={this.props.contact.middlename} onChange={this.handleInput}/>
             </div>
           </div>
           <div className="contact-create-form__container__input-block">
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="birthday" className="contact-create-form__label">Birthday:</label>
-              <input name="birthday" type="date" placeholder="Birthday" className="contact-create-form__input" value={this.state.contact.birthday} onChange={this.handleInputChange}/>
+              <input name="birthday" type="date" placeholder="Birthday" className="contact-create-form__input" value={this.props.contact.birthday} onChange={this.handleInput}/>
             </div>
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="gender" className="contact-create-form__label">Gender:</label>
-              <select name="gender" className="contact-create-form__input__select" value={this.state.contact.gender} onChange={this.handleInputChange}>
-                <option disabled value="">Choose your gender</option>
+              <select name="gender" className="contact-create-form__input__select" value={this.props.contact.gender} onChange={this.handleInput}>
+                <option disabled value="" selected="selected">Choose your gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
             </div>
             <div className="contact-create-form__container__input-block__item">
               <label htmlFor="family" className="contact-create-form__label">Family status:</label>
-              <select name="family" className="contact-create-form__input__select" value={this.state.contact.family} onChange={this.handleInputChange}>
-                <option disabled value="">Family status</option>
+              <select name="family" className="contact-create-form__input__select" value={this.props.contact.family} onChange={this.handleInput}>
+                <option disabled value="" selected="selected">Family status</option>
                 <option value="single">Single</option>
                 <option value="married">Married</option>
               </select>
             </div>
           </div>
           <div>
-            <button className="contact-create-form__button" onClick={this.onClick}>
+            <button className="contact-create-form__button" onClick={this.showLocationStep}>
               Next
             </button>
           </div>
