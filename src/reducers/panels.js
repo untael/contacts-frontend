@@ -4,7 +4,9 @@ let initialState = {
   showEdit: false,
   showList: true,
   showLoader: true,
-  contact: {},
+  contact: {
+    phones: [],
+  },
 }
 
 const panels = (state = initialState, action) => {

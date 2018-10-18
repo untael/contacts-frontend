@@ -1,10 +1,15 @@
 import React from 'react'
 import './styles.css'
+import ContactListItem from '../ContactListItem/containers/ContactListItem'
+import PhoneNumbers from './PhoneNumbers'
 
 class ContactDisplayForm extends React.Component {
 
   showList = () => {
     this.props.showListPanel()
+  }
+  getNumbers = () => {
+    return this.props.contact.phones.map(phone => phone.number)
   }
 
   render () {
@@ -109,6 +114,15 @@ class ContactDisplayForm extends React.Component {
               </div>
             </div>
           </div>
+          <div className="contact-display__container__title">
+            Phone information:
+          </div>
+          {this.props.contact.phones.map(phone =>
+            <PhoneNumbers
+              key={phone.id}
+              phone={phone}
+            />,
+          )}
         </div>
       </div>
     )

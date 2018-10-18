@@ -131,11 +131,18 @@ export function showCreate () {
   }
 }
 
-
 export function saveContactData (contact) {
   return {
     type: SAVE_CONTACT_DATA,
     contact: contact,
   }
 }
+
+export function saveContactPhones (data) {
+  return {
+    type: SAVE_CONTACT_DATA,
+    contact: data,
+  }
+}
+
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import './styles.css'
-import ContactListItem from '../ContactListItem/ContactListItem'
+import ContactListItem from '../ContactListItem/containers/ContactListItem'
 
 class ContactSearchForm extends React.Component {
   constructor (props) {

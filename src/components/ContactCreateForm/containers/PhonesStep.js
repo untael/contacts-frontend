@@ -7,6 +7,6 @@ const mapStateToProps = (state) => ({
   contact: state.panels.contact,
 })
 const mapDispatchToProps = (dispatch) => ({
-  saveData: (contact) => dispatch(saveContactData(contact)),
+  saveData: (data) => dispatch(saveContactData(data)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(PhonesStep)
